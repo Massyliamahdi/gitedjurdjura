@@ -1,6 +1,6 @@
 :root{
-  --bg:#fbf7f2;
-  --text:#1f2937;
+  --bg:#fffbf2;
+  --text:#234042;
   --muted:#6b7280;
   --card:#ffffff;
   --accent:#b45309;
@@ -10,7 +10,7 @@
 }
 
 *{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial; color:var(--text); background:var(--bg); }
+html,body{ margin:0; padding:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, system-ui, -apple-system, Segoe UI, Roboto, Arial; color:var(--text); background:var(--bg); }
 a{ color:inherit; }
 .container{ max-width:1100px; margin:0 auto; padding:0 18px; }
 .section{ padding:56px 0; }
