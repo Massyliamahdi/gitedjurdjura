@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gîte — Séjour & Randonnées</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <nav class="nav">
+      <div class="brand">Gîte</div>
+      <div class="nav__links">
+        <a href="#galerie">Galerie</a>
+        <a href="#services">Services</a>
+        <a href="#contact" class="btn btn--light">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero__content">
+      <h1>Un gîte authentique au cœur des montagnes</h1>
+      <p>Séjour, repas traditionnels et randonnées — une expérience simple, vraie et chaleureuse.</p>
+
+      <div class="cta">
+        <!-- Remplace le numéro -->
+        <a class="btn btn--primary" href="https://wa.me/212600000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a class="btn btn--ghost" href="tel:+212600000000">Appeler</a>
+      </div>
+
+      <div class="badges">
+        <span>🌿 Nature</span>
+        <span>🥾 Randonnées</span>
+        <span>🍲 Cuisine locale</span>
+        <span>🛏️ Hébergement</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>À propos</h2>
+      <p class="muted">
+        Un gîte familial pour se reposer, découvrir la région et vivre la montagne autrement :
+        accueil chaleureux, repas traditionnels, et sorties adaptées au niveau de chacun.
+      </p>
+    </section>
+
+    <section id="galerie" class="section">
+      <div class="section__head">
+        <h2>Galerie</h2>
+        <p class="muted">Quelques photos du gîte et des activités.</p>
+      </div>
+
+      <div class="grid">
+        <figure class="card"><img src="images/randonnee.jpg" alt="Randonnée en montagne"></figure>
+        <figure class="card"><img src="images/rondonnees.jpg" alt="Paysage de montagne"></figure>
+        <figure class="card"><img src="images/randonne-papa.jpg" alt="Randonnée neige"></figure>
+        <figure class="card"><img src="images/randonnee-3.jpg" alt="Randonnée en groupe"></figure>
+
+        <figure class="card"><img src="images/salon.jpg" alt="Salon traditionnel"></figure>
+        <figure class="card"><img src="images/salon-2.jpg" alt="Espace détente traditionnel"></figure>
+        <figure class="card"><img src="images/service.jpg" alt="Repas et service"></figure>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="section__head">
+        <h2>Services</h2>
+        <p class="muted">À ajuster selon ce que ton père propose exactement.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <h3>Hébergement</h3>
+          <p>Chambres / couchages dans une ambiance traditionnelle, propre et confortable.</p>
+        </div>
+        <div class="feature">
+          <h3>Repas traditionnels</h3>
+          <p>Cuisine locale (petit-déjeuner, déjeuner/dîner) — sur demande.</p>
+        </div>
+        <div class="feature">
+          <h3>Randonnées guidées</h3>
+          <p>Sorties montagne (débutant à confirmé), selon la saison et la météo.</p>
+        </div>
+        <div class="feature">
+          <h3>Expériences</h3>
+          <p>Découverte de la région, points de vue, moments conviviaux.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section info">
+      <div class="info__box">
+        <h2>Infos pratiques</h2>
+        <ul>
+          <li><strong>Capacité :</strong> à remplir</li>
+          <li><strong>Localisation :</strong> à remplir (ville / région)</li>
+          <li><strong>Saisons :</strong> toute l’année / selon météo</li>
+          <li><strong>Langues :</strong> à remplir</li>
+        </ul>
+      </div>
+      <div class="info__box">
+        <h2>Réserver</h2>
+        <p class="muted">
+          Dis-nous les dates, le nombre de personnes et ce que vous voulez (séjour / repas / randonnée).
+        </p>
+        <div class="cta">
+          <a class="btn btn--primary" href="https://wa.me/212600000000" target="_blank" rel="noreferrer">Écrire sur WhatsApp</a>
+          <a class="btn btn--ghost" href="#contact">Voir contact</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="contact">
+        <div class="contact__card">
+          <h3>Coordonnées</h3>
+          <p><strong>Téléphone :</strong> <a href="tel:+212600000000">+212 6 00 00 00 00</a></p>
+          <p><strong>WhatsApp :</strong> <a href="https://wa.me/212600000000" target="_blank" rel="noreferrer">Envoyer un message</a></p>
+          <p><strong>Facebook :</strong> <a href="#" target="_blank" rel="noreferrer">Voir la page</a></p>
+        </div>
+
+        <div class="contact__card">
+          <h3>Carte</h3>
+          <p class="muted">Quand tu auras le lien Google Maps, on l’intègre ici (iframe).</p>
+          <!-- Exemple plus tard :
+          <iframe src="https://www.google.com/maps/embed?pb=..." loading="lazy"></iframe>
+          -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="y"></span> Gîte — Tous droits réservés</p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
