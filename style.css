@@ -235,38 +235,79 @@ h1,h2,h3{ margin:0 0 12px; }
   font-size: 16px;
 }
 
-.contact2__social{
-  display:flex;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.social{
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  background: rgba(35,64,66,.10);
-  color: #234042;
-  font-size: 18px;
-}
-
-.social:hover{
-  background: rgba(35,64,66,.18);
-}
-
-.contact2 iframe{
-  width: 100%;
-  height: 280px;
-  border: 0;
-  border-radius: 18px;
+/* === CONTACT style Webflow (sans titre "Contact") === */
+.contact2__grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 52px;
+  align-items:start;
   margin-top: 12px;
 }
 
-@media (max-width: 860px){
-  .contact2__grid{ grid-template-columns: 1fr; }
+.contact2__title{
+  margin: 0 0 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-size: clamp(26px, 2.2vw, 34px);
 }
 
+.contact2__lead{
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 16.5px;
+  max-width: 580px;
+}
+
+.contact2__rows{
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* Lignes icône + texte (style propre) */
+.contact2__row{
+  display:flex;
+  align-items:flex-start;
+  gap: 12px;
+  text-decoration:none;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.contact2__row strong{
+  font-weight: 600;
+}
+
+.contact2__row i{
+  width: 18px;
+  margin-top: 3px;
+  color: var(--accent2);
+  opacity: .95;
+}
+
+/* Hover discret comme Webflow */
+.contact2__row:hover{
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Carte */
+.contact2__right iframe{
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .contact2__grid{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .contact2__right iframe{ height: 280px; }
+}
