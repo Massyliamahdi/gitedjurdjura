@@ -58,50 +58,59 @@
       </div>
     </section>
 
-  <!-- Galerie -->
-<div class="gallery-grid" id="galleryGrid">
+<!-- Galerie -->
+<section id="galerie" class="section">
+  <div class="container">
+    <div class="section__head">
+      <h2>Galerie</h2>
+      <p class="muted">Quelques photos du gîte et des activités.</p>
+    </div>
 
-  <button class="gallery-item" data-full="images/cheminee.jpg">
-    <img src="images/cheminee.jpg" alt="Feu de bois et cheminée">
-  </button>
+    <div class="gallery-grid" id="galleryGrid">
+      <button class="gallery-item" data-full="images/cheminee.jpg">
+        <img src="images/cheminee.jpg" alt="Feu de bois et cheminée">
+      </button>
 
-  <button class="gallery-item" data-full="images/randonnee.jpg">
-    <img src="images/randonnee.jpg" alt="Randonnée en montagne">
-  </button>
+      <button class="gallery-item" data-full="images/randonnee.jpg">
+        <img src="images/randonnee.jpg" alt="Randonnée en montagne">
+      </button>
 
-  <button class="gallery-item" data-full="images/rondonnees.jpg">
-    <img src="images/rondonnees.jpg" alt="Paysage de montagne">
-  </button>
+      <button class="gallery-item" data-full="images/rondonnees.jpg">
+        <img src="images/rondonnees.jpg" alt="Paysage de montagne">
+      </button>
 
-  <button class="gallery-item" data-full="images/randonne-papa.jpg">
-    <img src="images/randonne-papa.jpg" alt="Randonnée dans la neige">
-  </button>
+      <button class="gallery-item" data-full="images/randonne-papa.jpg">
+        <img src="images/randonne-papa.jpg" alt="Randonnée dans la neige">
+      </button>
 
-  <button class="gallery-item" data-full="images/randonnee-3.jpg">
-    <img src="images/randonnee-3.jpg" alt="Randonnée en groupe">
-  </button>
+      <button class="gallery-item" data-full="images/randonnee-3.jpg">
+        <img src="images/randonnee-3.jpg" alt="Randonnée en groupe">
+      </button>
 
-  <button class="gallery-item" data-full="images/facade.webp">
-    <img src="images/facade.webp" alt="Façade du gîte">
-  </button>
+      <button class="gallery-item" data-full="images/facade.webp">
+        <img src="images/facade.webp" alt="Façade du gîte">
+      </button>
 
-  <button class="gallery-item" data-full="images/cuisine.webp">
-    <img src="images/cuisine.webp" alt="Cuisine traditionnelle">
-  </button>
+      <button class="gallery-item" data-full="images/cuisine.webp">
+        <img src="images/cuisine.webp" alt="Cuisine traditionnelle">
+      </button>
 
-  <button class="gallery-item" data-full="images/salon.webp">
-    <img src="images/salon.webp" alt="Salon traditionnel">
-  </button>
+      <button class="gallery-item" data-full="images/salon.webp">
+        <img src="images/salon.webp" alt="Salon traditionnel">
+      </button>
 
-  <button class="gallery-item" data-full="images/salon-2.jpg">
-    <img src="images/salon-2.jpg" alt="Espace détente traditionnel">
-  </button>
+      <button class="gallery-item" data-full="images/salon-2.jpg">
+        <img src="images/salon-2.jpg" alt="Espace détente traditionnel">
+      </button>
 
-  <button class="gallery-item" data-full="images/service.webp">
-    <img src="images/service.webp" alt="Repas et service">
-  </button>
+      <button class="gallery-item" data-full="images/service.webp">
+        <img src="images/service.webp" alt="Repas et service">
+      </button>
+    </div>
 
-</div>
+  </div>
+</section>
+
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -270,44 +279,6 @@
     </div>
   </footer>
 
- <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-
-<script>
-  (function(){
-    const items = document.querySelectorAll('.masonry__item');
-    const box = document.getElementById('lightbox');
-    const img = document.getElementById('lightboxImg');
-    const closeBtn = document.getElementById('lightboxClose');
-
-    function openLightbox(src, alt){
-      img.src = src;
-      img.alt = alt || '';
-      box.classList.add('is-open');
-      box.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox(){
-      box.classList.remove('is-open');
-      box.setAttribute('aria-hidden', 'true');
-      img.src = '';
-      document.body.style.overflow = '';
-    }
-
-    items.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const image = btn.querySelector('img');
-        openLightbox(btn.dataset.full || image.src, image.alt);
-      });
-    });
-
-    closeBtn.addEventListener('click', closeLightbox);
-    box.addEventListener('click', (e) => { if(e.target === box) closeLightbox(); });
-    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
-  })();
-</script>
   <script>
 (function(){
   const items = document.querySelectorAll('.gallery-item');
@@ -315,26 +286,39 @@
   const img = document.getElementById('lightboxImg');
   const closeBtn = document.getElementById('lightboxClose');
 
-  items.forEach(btn => {
-    btn.addEventListener('click', () => {
-      img.src = btn.dataset.full;
-      img.alt = btn.querySelector('img').alt || '';
-      box.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    });
-  });
+  function openLightbox(src, alt){
+    img.src = src;
+    img.alt = alt || '';
+    box.classList.add('is-open');
+    box.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
 
-  closeBtn.addEventListener('click', close);
-  box.addEventListener('click', e => { if(e.target === box) close(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
-
-  function close(){
+  function closeLightbox(){
     box.classList.remove('is-open');
+    box.setAttribute('aria-hidden', 'true');
     img.src = '';
     document.body.style.overflow = '';
   }
+
+  items.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const image = btn.querySelector('img');
+      openLightbox(btn.dataset.full || image.src, image.alt);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  box.addEventListener('click', (e) => { if(e.target === box) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
 })();
 </script>
+
+ <script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+
 
 
 
