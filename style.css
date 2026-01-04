@@ -410,91 +410,77 @@ h1,h2,h3{ margin:0 0 12px; }
   .gallery-item img{ height: 240px; }
 }
 /* ===== NAV style pill ===== */
-/* ===== NAV pleine largeur (comme ton exemple) ===== */
-.pillnav{
+
+/* === NAV FULL-WIDTH – STYLE PREMIUM === */
+.topnav{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  height: 70px;
 
-  width: 100%;
-  z-index: 1000;
-
-  /* espace intérieur de la barre */
-  padding: 20px 40px;
-
-  /* IMPORTANT : on enlève le centrage actuel */
-  transform: none;
-  pointer-events: none;
-}
-
-/* la barre elle-même (plein écran) */
-.pillnav__inner{
-  pointer-events: auto;
-
-  width: 100%;
-  height: 64px;
-
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 
-  /* ta couleur */
-  background: #234042;
+  padding: 0 40px;
 
-  /* style */
-  border-radius: 999px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.25);
+  background: rgba(255,255,255,0.45); /* effet verre */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
-  /* contenu centré et limité */
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+
+  z-index: 1500;
 }
 
-/* le nom à gauche (changer la police ici) */
-.pillnav__title{
-  font-family: "Sans serif"; /* ✅ ta nouvelle font */
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: rgba(255,255,255,.95);
+/* LEFT SIDE LINKS */
+.topnav__left{
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.topnav__left a{
   text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  opacity: .95;
 }
 
-.pillnav__links{
-  display:flex;
-  align-items:center;
-  gap: 22px;
+.topnav__left a:hover{
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
-.pillnav__links a{
-  color: rgba(255,255,255,.9);
-  text-decoration:none;
-  font-size: 14.5px;
-  letter-spacing: .06em;
-  text-transform: uppercase;
+/* BRAND LEFT */
+.brand{
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: .5px;
 }
 
-.pillnav__links a:hover{
-  color: #fff;
+/* RIGHT BUTTON */
+.topnav__btn{
+  background: black;
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: .2s ease;
 }
 
-.pillnav__btn{
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.45);
-  font-size: 13px;
+.topnav__btn:hover{
+  background: #000;
+  filter: brightness(1.1);
 }
 
-/* ✅ Pour éviter que la nav fixe cache le haut quand tu cliques un lien */
-html{ scroll-padding-top: 96px; }
+/* Avoid scroll jump */
+html{ scroll-padding-top: 80px; }
 
-/* Responsive */
-@media (max-width: 700px){
-  .pillnav{ padding: 14px 14px; }
-  .pillnav__inner{ height: 58px; }
-  .pillnav__links a:not(.pillnav__btn){ display:none; }
-}
 
 
