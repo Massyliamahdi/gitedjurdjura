@@ -331,6 +331,29 @@
  <script>
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
+<script>
+(function(){
+  // Pour chaque pile d'images, on fait "tourner" les 3 images au clic
+  document.querySelectorAll('.image-stack').forEach(stack => {
+    stack.addEventListener('click', () => {
+      const imgs = Array.from(stack.querySelectorAll('img'));
+      if (imgs.length < 2) return;
+
+      // On récupère src/alt de chaque image
+      const data = imgs.map(img => ({ src: img.src, alt: img.alt }));
+
+      // Rotation: la 1ère passe à la fin => la 2e devient 1ère, etc.
+      data.push(data.shift());
+
+      // On réapplique dans les images existantes
+      imgs.forEach((img, i) => {
+        img.src = data[i].src;
+        img.alt = data[i].alt;
+      });
+    });
+  });
+})();
+</script>
 
 
 
