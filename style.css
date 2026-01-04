@@ -444,7 +444,7 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 .topnav__left a {
-  color: #efe5d7; /* IMPORTANT POUR HERO SOMBRE */
+  color: #234042; /* IMPORTANT POUR HERO SOMBRE */
   font-family: Zodiak Variable, Georgia, sans-serif;
   text-decoration: none;
   font-size: 1rem;
@@ -465,7 +465,7 @@ h1,h2,h3{ margin:0 0 12px; }
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: .5px;
-  color: #efe5d7;
+  color: #234042;
 }
 
 /* Vertical line separator */
@@ -479,7 +479,7 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* RIGHT BUTTON */
 .topnav__btn {
-  background: black;
+  background: #234042;
   color: #efe5d7;
   padding: 10px 22px;
   border-radius: 10px;
