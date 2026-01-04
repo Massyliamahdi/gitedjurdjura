@@ -54,12 +54,39 @@ h1,h2,h3{ margin:0 0 12px; }
 .nav__links a:hover{ opacity:1; text-decoration:underline; text-underline-offset:6px; }
 
 .hero__content{
-  position:relative;
-  max-width:1100px; margin:0 auto;
-  padding:70px 18px 30px;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 92px 18px 64px;
+
+  /* ✅ Pour placer le texte à gauche comme Webflow */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
-.hero__content h1{ font-size:clamp(28px, 4vw, 46px); line-height:1.1; }
-.hero__content p{ max-width:680px; opacity:.95; }
+
+/* ✅ Titre grand + très fin */
+.hero__content h1{
+  margin: 0;
+  font-weight: 300;                 /* épaisseur fine */
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+
+  /* Taille type Webflow */
+  font-size: clamp(48px, 6.2vw, 92px);
+}
+
+/* ✅ Petite phrase chaleureuse sous le titre */
+.hero__content p{
+  margin-top: 18px;
+  max-width: 640px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: .92;
+}
+
 
 .badges{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
 .badges span{
