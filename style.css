@@ -412,75 +412,80 @@ h1,h2,h3{ margin:0 0 12px; }
 /* ===== NAV style pill ===== */
 
 /* === NAV FULL-WIDTH – STYLE PREMIUM === */
-.topnav{
+/* === NAV KALEO FULL-WIDTH GLASS === */
+.topnav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
+
+  height: 72px;
+  padding: 0 40px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 40px;
+  /* EFFET VERRE */
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
-  background: rgba(255,255,255,0.45); /* effet verre */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 
-  border-bottom: 1px solid rgba(255,255,255,0.25);
-
-  z-index: 1500;
+  z-index: 2000;
 }
 
 /* LEFT SIDE LINKS */
-.topnav__left{
+.topnav__left {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 28px;
 }
 
-.topnav__left a{
+.topnav__left a {
+  color: white; /* IMPORTANT POUR HERO SOMBRE */
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  color: white;
-  opacity: .95;
+  letter-spacing: 0.02em;
+  opacity: 0.92;
 }
 
-.topnav__left a:hover{
+.topnav__left a:hover {
   opacity: 1;
   text-decoration: underline;
   text-underline-offset: 6px;
 }
 
-/* BRAND LEFT */
-.brand{
-  font-weight: 700;
-  font-size: 16px;
+/* BRAND */
+.brand {
+  font-size: 17px;
+  font-weight: 600;
   letter-spacing: .5px;
+  color: white;
 }
 
 /* RIGHT BUTTON */
-.topnav__btn{
+.topnav__btn {
   background: black;
-  padding: 10px 22px;
-  border-radius: 8px;
   color: white;
-  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 10px;
   font-size: 14px;
   font-weight: 500;
-  transition: .2s ease;
+  text-decoration: none;
+  transition: .25s ease;
 }
 
-.topnav__btn:hover{
-  background: #000;
-  filter: brightness(1.1);
+.topnav__btn:hover {
+  filter: brightness(1.15);
 }
 
-/* Avoid scroll jump */
-html{ scroll-padding-top: 80px; }
+/* Fix scroll target offset */
+html {
+  scroll-padding-top: 90px;
+}
 
 
 
