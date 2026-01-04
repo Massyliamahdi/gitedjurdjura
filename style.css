@@ -454,7 +454,7 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* le nom à gauche (changer la police ici) */
 .pillnav__title{
-  font-family: "Playfair Display", serif; /* ✅ ta nouvelle font */
+  font-family: "Sans serif"; /* ✅ ta nouvelle font */
   font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.01em;
