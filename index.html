@@ -178,53 +178,50 @@
 </section>
 
 <!-- Galerie -->
-<section id="galerie" class="section">
+<!-- ===== STACKS (piles d’images + mini phrase) ===== -->
+<section class="section stacks" id="instants">
   <div class="container">
-    <div class="section__head">
-      <h2>Galerie</h2>
-      <p class="muted">Quelques photos du gîte et des activités.</p>
+
+    <div class="stacks__head">
+      <h2>Des instants à vivre</h2>
+      <p class="muted">Trois ambiances, une même chaleur : nature, table, et maison.</p>
     </div>
 
-    <div class="gallery-grid" id="galleryGrid">
-      <button type="button" class="gallery-item" data-full="images/cheminee.jpg">
-        <img src="images/cheminee.jpg" alt="Feu de bois et cheminée">
-      </button>
+    <div class="stacks__list">
 
-      <button type="button" class="gallery-item" data-full="images/randonnee.jpg">
-        <img src="images/randonnee.jpg" alt="Randonnée en montagne">
-      </button>
+      <!-- Stack 1 -->
+      <article class="stack">
+        <p class="stack__tag">Randonnées & panoramas — la montagne comme terrain de jeu</p>
 
-      <button type="button" class="gallery-item" data-full="images/rondonnees.jpg">
-        <img src="images/rondonnees.jpg" alt="Paysage de montagne">
-      </button>
+        <div class="image-stack">
+          <img class="layer-1" src="images/randonnee.jpg" alt="Randonnée" loading="lazy">
+          <img class="layer-2" src="images/rondonnees.jpg" alt="Paysage de montagne" loading="lazy">
+          <img class="layer-3" src="images/randonne-papa.jpg" alt="Randonnée dans la neige" loading="lazy">
+        </div>
+      </article>
 
-      <button type="button" class="gallery-item" data-full="images/randonne-papa.jpg">
-        <img src="images/randonne-papa.jpg" alt="Randonnée dans la neige">
-      </button>
+      <!-- Stack 2 -->
+      <article class="stack">
+        <p class="stack__tag">Cuisine maison — des saveurs simples, vraies, généreuses</p>
 
-      <button type="button" class="gallery-item" data-full="images/randonnee-3.jpg">
-        <img src="images/randonnee-3.jpg" alt="Randonnée en groupe">
-      </button>
+        <div class="image-stack">
+          <img class="layer-1" src="images/service.webp" alt="Service" loading="lazy">
+          <img class="layer-2" src="images/cuisine.webp" alt="Cuisine traditionnelle" loading="lazy">
+          <img class="layer-3" src="images/cheminee.jpg" alt="Cheminée" loading="lazy">
+        </div>
+      </article>
 
-      <button type="button" class="gallery-item" data-full="images/facade.webp">
-        <img src="images/facade.webp" alt="Façade du gîte">
-      </button>
+      <!-- Stack 3 -->
+      <article class="stack">
+        <p class="stack__tag">Ambiance du gîte — confort, tradition et calme</p>
 
-      <button type="button" class="gallery-item" data-full="images/cuisine.webp">
-        <img src="images/cuisine.webp" alt="Cuisine traditionnelle">
-      </button>
+        <div class="image-stack">
+          <img class="layer-1" src="images/salon.webp" alt="Salon" loading="lazy">
+          <img class="layer-2" src="images/salon-2.jpg" alt="Espace détente" loading="lazy">
+          <img class="layer-3" src="images/facade.webp" alt="Façade" loading="lazy">
+        </div>
+      </article>
 
-      <button type="button" class="gallery-item" data-full="images/salon.webp">
-        <img src="images/salon.webp" alt="Salon traditionnel">
-      </button>
-
-      <button type="button" class="gallery-item" data-full="images/salon-2.jpg">
-        <img src="images/salon-2.jpg" alt="Espace détente traditionnel">
-      </button>
-
-      <button type="button" class="gallery-item" data-full="images/service.webp">
-        <img src="images/service.webp" alt="Repas et service">
-      </button>
     </div>
 
   </div>
