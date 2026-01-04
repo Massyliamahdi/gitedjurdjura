@@ -1,5 +1,5 @@
 :root{
-  --bg:#fffbf2;
+  --bg:#efe5d7;
   --text:#234042;
   --muted:#6b7280;
   --card:#ffffff;
@@ -77,10 +77,11 @@ h1,h2,h3{ margin:0 0 12px; }
 /* ✅ Titre grand + très fin */
 .hero__content h1{
   margin: 0;
-  font-family: "Playfair Display", serif;
+  font-family: sans-serif;
   font-weight: 300;                 /* épaisseur fine */
   letter-spacing: -0.03em;
   line-height: 0.98;
+  color: #efe5d7
 
   /* Taille type Webflow */
   font-size: clamp(72px, 10vw, 140px);
@@ -94,6 +95,8 @@ h1,h2,h3{ margin:0 0 12px; }
   font-size: 18px;
   line-height: 1.6;
   opacity: .92;
+  color: #efe5d7
+  font-family: sans-serif;
 }
 
 
