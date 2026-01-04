@@ -311,3 +311,17 @@ h1,h2,h3{ margin:0 0 12px; }
   }
   .contact2__right iframe{ height: 280px; }
 }
+/* Section contact en pleine largeur */
+.contact2--full{
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* sort du container centré */
+  padding: 72px 0;
+}
+
+/* Contenu interne limité mais aligné comme Webflow */
+.contact2--full .contact2__grid{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
