@@ -444,9 +444,10 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 .topnav__left a {
-  color: white; /* IMPORTANT POUR HERO SOMBRE */
+  color: #efe5d7; /* IMPORTANT POUR HERO SOMBRE */
+  font-family: Zodiak Variable, Georgia, sans-serif;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   opacity: 0.92;
@@ -460,16 +461,26 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* BRAND */
 .brand {
-  font-size: 17px;
+  font-family: Zodiak Variable, Georgia, sans-serif;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: .5px;
-  color: white;
+  color: #efe5d7;
+}
+
+/* Vertical line separator */
+.nav-separator {
+  width: 1px;
+  height: 22px;
+  background: rgba(255,255,255,0.35);
+  display: inline-block;
+  margin: 0 18px;
 }
 
 /* RIGHT BUTTON */
 .topnav__btn {
   background: black;
-  color: white;
+  color: #efe5d7;
   padding: 10px 22px;
   border-radius: 10px;
   font-size: 14px;
