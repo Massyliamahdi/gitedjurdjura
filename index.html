@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gîte du Djurdjura— Séjour & Randonnées</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
  <link rel="icon" href="images/favicon.ico">
  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -113,25 +115,59 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="contact">
-        <div class="contact__card">
-          <h3>Coordonnées</h3>
-          <p><strong>Téléphone :</strong> <a href="tel:+213556922145">+213 556 92 21 45</a></p>
-          <p><strong>WhatsApp :</strong> <a href="https://wa.me/213556922145" target="_blank" rel="noreferrer">Envoyer un message</a></p>
-          <p><strong>Facebook :</strong> <a href="https://www.facebook.com/profile.php?id=61566464864168&locale=fr_CA" target="_blank" rel="noreferrer">Voir la page</a></p>
-        </div>
+   
+    
+  <section id="contact" class="section contact2">
+  <div class="section__head">
+    <h2>Contact</h2>
+    <p class="muted">Écris-nous pour réserver ou poser une question.</p>
+  </div>
 
-        <div class="contact__card">
-          <h3>Carte</h3>
-          <p class="muted">Quand tu auras le lien Google Maps, on l’intègre ici (iframe).</p>
-          <!-- Exemple plus tard :
-          <iframe src="https://www.google.com/maps/embed?pb=..." loading="lazy"></iframe>
-          -->
-        </div>
+  <div class="contact2__grid">
+
+    <!-- Colonne gauche -->
+    <div class="contact2__card">
+      <h3>Coordonnées</h3>
+
+      <a class="contact2__row" href="mailto:contact@gitedjurdjura.com">
+        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+        <span>contact@gitedjurdjura.com</span>
+      </a>
+
+      <a class="contact2__row" href="tel:+213556922145">
+        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+        <span>+213 556 92 21 45</span>
+      </a>
+
+      <div class="contact2__row">
+        <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+        <span>Route de Tala Guilef, Boghni, Algérie 15003</span>
       </div>
-    </section>
+
+      <div class="contact2__social">
+        <a class="social" href="https://wa.me/213556922145" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a class="social" href="https://www.facebook.com/profile.php?id=61566464864168&sk=directory_basic_info&locale=fr_CA" target="_blank" rel="noreferrer" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Colonne droite -->
+    <div class="contact2__card">
+      <h3>Carte</h3>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1076.001841504502!2d3.966321518086394!3d36.52784954629929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sfr!2sca!4v1767488886698!5m2!1sfr!2sca"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
   </main>
 
 <footer class="footer footer--dark">
