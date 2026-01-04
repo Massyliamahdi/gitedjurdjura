@@ -324,4 +324,20 @@ h1,h2,h3{ margin:0 0 12px; }
   margin: 0 auto;
   padding: 0 24px;
 }
+/* ✅ Rend une section "plein écran" même si elle est dans .container */
+.fullwidth{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* ✅ Optionnel : ajoute un peu de padding sur les côtés */
+.fullwidth > *{
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
 
