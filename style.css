@@ -421,7 +421,7 @@ h1,h2,h3{ margin:0 0 12px; }
   z-index: 1000;
 
   /* espace intérieur de la barre */
-  padding: 18px 24px;
+  padding: 20px 40px;
 
   /* IMPORTANT : on enlève le centrage actuel */
   transform: none;
@@ -455,7 +455,7 @@ h1,h2,h3{ margin:0 0 12px; }
 /* le nom à gauche (changer la police ici) */
 .pillnav__title{
   font-family: "Playfair Display", serif; /* ✅ ta nouvelle font */
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: rgba(255,255,255,.95);
