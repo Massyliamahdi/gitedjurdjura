@@ -374,45 +374,128 @@ h1,h2,h3{ margin:0 0 12px; }
   .expCard{ min-height: unset; }
 }
 /* ===== Galerie chic uniforme ===== */
-.gallery-grid{
+/* ===== STACKS (piles d'images + mini phrase) ===== */
+.stacks{
+  padding: 64px 0;
+}
+
+.stacks__head{
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 36px;
+}
+
+.stacks__head h2{
+  margin: 0 0 10px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.stacks__head .muted{
+  margin: 0 auto;
+  max-width: 62ch;
+}
+
+/* 1 pile sous l'autre (par défaut) */
+.stacks__list{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 18px;
+  grid-template-columns: 1fr;
+  gap: 42px;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
-.gallery-item{
-  border: 0;
-  padding: 10px;
-  background: rgba(255,255,255,.65);
-  border-radius: 22px;
-  box-shadow: 0 12px 28px rgba(0,0,0,.08);
-  cursor: pointer;
-  transition: transform .25s ease, box-shadow .25s ease;
+/* Chaque bloc pile + texte */
+.stack{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 28px;
 }
 
-.gallery-item:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.12);
+.stack__tag{
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text);
+  letter-spacing: .02em;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 14px;
 }
 
-.gallery-item img{
+.stack__tag::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* La pile elle-même */
+.image-stack{
+  position: relative;
+  width: 330px;
+  height: 440px;
+}
+
+.image-stack img{
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 260px;              /* hauteur élégante */
-  object-fit: contain;       /* pas de crop */
-  background: #f3f1ed;
-  border-radius: 16px;
-  display: block;
+  height: 100%;
+  object-fit: cover;              /* ✅ pile = cover (c’est plus beau) */
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  transition: transform .6s ease, box-shadow .6s ease;
+}
+
+/* 3 couches */
+.image-stack .layer-1{ transform: rotate(-4deg) translate(-34px, 22px); z-index: 1; }
+.image-stack .layer-2{ transform: rotate(2deg) translate(0, 0); z-index: 2; }
+.image-stack .layer-3{ transform: rotate(6deg) translate(34px, -18px); z-index: 3; }
+
+.image-stack:hover .layer-1{ transform: rotate(-6deg) translate(-52px, 38px); }
+.image-stack:hover .layer-3{ transform: rotate(10deg) translate(52px, -34px); }
+
+/* ✅ Option: 2 colonnes de piles */
+.stacks--two .stacks__list{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1100px;
+}
+.stacks--two .stack{
+  grid-template-columns: 1fr;  /* pile au-dessus du texte dans chaque colonne */
+  justify-items: center;
+  text-align: center;
+}
+.stacks--two .stack__tag{
+  padding-left: 0;
+}
+.stacks--two .stack__tag::before{
+  display: none;
 }
 
 /* Responsive */
-@media (max-width: 980px){
-  .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px){
+  .stack{
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .stack__tag{ padding-left: 0; }
+  .stack__tag::before{ display:none; }
+  .image-stack{
+    width: min(340px, 90vw);
+    height: calc(min(340px, 90vw) * 1.33);
+  }
+
+  .stacks--two .stacks__list{
+    grid-template-columns: 1fr;
+  }
 }
-@media (max-width: 600px){
-  .gallery-grid{ grid-template-columns: 1fr; }
-  .gallery-item img{ height: 240px; }
-}
+
 /* ===== NAV style pill ===== */
 
 /* === NAV FULL-WIDTH – STYLE PREMIUM === */
