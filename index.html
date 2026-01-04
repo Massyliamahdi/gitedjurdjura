@@ -59,45 +59,45 @@
     </section>
 
   <!-- Galerie -->
-<div class="masonry" id="galleryMasonry">
+<div class="gallery-grid" id="galleryGrid">
 
-  <button class="masonry__item" data-full="images/cheminee.jpg" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/cheminee.jpg">
     <img src="images/cheminee.jpg" alt="Feu de bois et cheminée">
   </button>
 
-  <button class="masonry__item" data-full="images/randonnee.jpg" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/randonnee.jpg">
     <img src="images/randonnee.jpg" alt="Randonnée en montagne">
   </button>
 
-  <button class="masonry__item" data-full="images/rondonnees.jpg" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/rondonnees.jpg">
     <img src="images/rondonnees.jpg" alt="Paysage de montagne">
   </button>
 
-  <button class="masonry__item" data-full="images/randonne-papa.jpg" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/randonne-papa.jpg">
     <img src="images/randonne-papa.jpg" alt="Randonnée dans la neige">
   </button>
 
-  <button class="masonry__item" data-full="images/randonnee-3.jpg" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/randonnee-3.jpg">
     <img src="images/randonnee-3.jpg" alt="Randonnée en groupe">
   </button>
 
-  <button class="masonry__item" data-full="images/facade.webp" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/facade.webp">
     <img src="images/facade.webp" alt="Façade du gîte">
   </button>
 
-  <button class="masonry__item" data-full="images/cuisine.webp" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/cuisine.webp">
     <img src="images/cuisine.webp" alt="Cuisine traditionnelle">
   </button>
 
-  <button class="masonry__item" data-full="images/salon.webp" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/salon.webp">
     <img src="images/salon.webp" alt="Salon traditionnel">
   </button>
 
-  <button class="masonry__item" data-full="images/salon-2.jpg" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/salon-2.jpg">
     <img src="images/salon-2.jpg" alt="Espace détente traditionnel">
   </button>
 
-  <button class="masonry__item" data-full="images/service.webp" aria-label="Voir la photo en grand">
+  <button class="gallery-item" data-full="images/service.webp">
     <img src="images/service.webp" alt="Repas et service">
   </button>
 
@@ -308,6 +308,34 @@
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
   })();
 </script>
+  <script>
+(function(){
+  const items = document.querySelectorAll('.gallery-item');
+  const box = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+
+  items.forEach(btn => {
+    btn.addEventListener('click', () => {
+      img.src = btn.dataset.full;
+      img.alt = btn.querySelector('img').alt || '';
+      box.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  box.addEventListener('click', e => { if(e.target === box) close(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
+
+  function close(){
+    box.classList.remove('is-open');
+    img.src = '';
+    document.body.style.overflow = '';
+  }
+})();
+</script>
+
 
 
 </body>
