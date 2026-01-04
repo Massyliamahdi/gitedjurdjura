@@ -242,9 +242,95 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+ <script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+<script>
+  (function () {
+    const carousels = document.querySelectorAll('.carousel');
+
+    carousels.forEach(carousel => {
+      const track = carousel.querySelector('.carousel__track');
+      const slides = Array.from(carousel.querySelectorAll('.carousel__slide'));
+      const prevBtn = carousel.querySelector('.carousel__btn--prev');
+      const nextBtn = carousel.querySelector('.carousel__btn--next');
+      const dotsWrap = carousel.querySelector('.carousel__dots');
+
+      let index = 0;
+      let timer = null;
+
+      const dots = slides.map((_, i) => {
+        const b = document.createElement('button');
+        b.className = 'carousel__dot' + (i === 0 ? ' is-active' : '');
+        b.type = 'button';
+        b.ariaLabel = `Aller à la photo ${i + 1}`;
+        b.addEventListener('click', () => goTo(i, true));
+        dotsWrap.appendChild(b);
+        return b;
+      });
+
+      function update(){
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+      }
+
+      function goTo(i, userAction=false){
+        index = (i + slides.length) % slides.length;
+        update();
+        if(userAction) restartAutoplay();
+      }
+
+      function next(userAction=false){ goTo(index + 1, userAction); }
+      function prev(userAction=false){ goTo(index - 1, userAction); }
+
+      prevBtn.addEventListener('click', () => prev(true));
+      nextBtn.addEventListener('click', () => next(true));
+
+      carousel.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowLeft') prev(true);
+        if(e.key === 'ArrowRight') next(true);
+      });
+      carousel.tabIndex = 0;
+
+      const autoplay = carousel.dataset.autoplay === "true";
+      const interval = parseInt(carousel.dataset.interval || "3500", 10);
+
+      function startAutoplay(){
+        if(!autoplay) return;
+        stopAutoplay();
+        timer = setInterval(() => next(false), interval);
+      }
+
+      function stopAutoplay(){
+        if(timer) clearInterval(timer);
+        timer = null;
+      }
+
+      function restartAutoplay(){
+        stopAutoplay();
+        startAutoplay();
+      }
+
+      carousel.addEventListener('mouseenter', stopAutoplay);
+      carousel.addEventListener('mouseleave', startAutoplay);
+      carousel.addEventListener('focusin', stopAutoplay);
+      carousel.addEventListener('focusout', startAutoplay);
+
+      let startX = 0;
+      carousel.addEventListener('touchstart', (e) => startX = e.touches[0].clientX, {passive:true});
+      carousel.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const dx = endX - startX;
+        if(Math.abs(dx) > 40) dx < 0 ? next(true) : prev(true);
+      });
+
+      update();
+      startAutoplay();
+    });
+  })();
+</script>
 
 </body>
 </html>
+
