@@ -70,6 +70,7 @@ h1,h2,h3{ margin:0 0 12px; }
 /* ✅ Titre grand + très fin */
 .hero__content h1{
   margin: 0;
+  font-family: "Playfair Display", serif;
   font-weight: 300;                 /* épaisseur fine */
   letter-spacing: -0.03em;
   line-height: 0.98;
