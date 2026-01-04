@@ -58,34 +58,59 @@
       </div>
     </section>
 
-    <!-- Galerie -->
-   <div class="carousel" data-autoplay="true" data-interval="3500">
-  <button class="carousel__btn carousel__btn--prev" aria-label="Photo précédente">
-    <i class="fa-solid fa-chevron-left"></i>
+  <!-- Galerie -->
+<div class="masonry" id="galleryMasonry">
+
+  <button class="masonry__item" data-full="images/cheminee.jpg" aria-label="Voir la photo en grand">
+    <img src="images/cheminee.jpg" alt="Feu de bois et cheminée">
   </button>
 
-  <div class="carousel__viewport">
-    <div class="carousel__track">
-      <figure class="carousel__slide"><img src="images/cheminee.jpg" alt="feu de bois"></figure>
-      <figure class="carousel__slide"><img src="images/randonnee.jpg" alt="Randonnée en montagne"></figure>
-      <figure class="carousel__slide"><img src="images/rondonnees.jpg" alt="Paysage de montagne"></figure>
-      <figure class="carousel__slide"><img src="images/randonne-papa.jpg" alt="Randonnée neige"></figure>
-      <figure class="carousel__slide"><img src="images/randonnee-3.jpg" alt="Randonnée en groupe"></figure>
-      <figure class="carousel__slide"><img src="images/facade.webp" alt="facade"></figure>
-      <figure class="carousel__slide"><img src="images/cuisine.webp" alt="cuisine"></figure>
-
-      <figure class="carousel__slide"><img src="images/salon.webp" alt="Salon traditionnel"></figure>
-      <figure class="carousel__slide"><img src="images/salon-2.jpg" alt="Espace détente traditionnel"></figure>
-      <figure class="carousel__slide"><img src="images/service.webp" alt="Repas et service"></figure>
-    </div>
-  </div>
-
-  <button class="carousel__btn carousel__btn--next" aria-label="Photo suivante">
-    <i class="fa-solid fa-chevron-right"></i>
+  <button class="masonry__item" data-full="images/randonnee.jpg" aria-label="Voir la photo en grand">
+    <img src="images/randonnee.jpg" alt="Randonnée en montagne">
   </button>
 
-  <div class="carousel__dots" aria-label="Navigation galerie"></div>
+  <button class="masonry__item" data-full="images/rondonnees.jpg" aria-label="Voir la photo en grand">
+    <img src="images/rondonnees.jpg" alt="Paysage de montagne">
+  </button>
+
+  <button class="masonry__item" data-full="images/randonne-papa.jpg" aria-label="Voir la photo en grand">
+    <img src="images/randonne-papa.jpg" alt="Randonnée dans la neige">
+  </button>
+
+  <button class="masonry__item" data-full="images/randonnee-3.jpg" aria-label="Voir la photo en grand">
+    <img src="images/randonnee-3.jpg" alt="Randonnée en groupe">
+  </button>
+
+  <button class="masonry__item" data-full="images/facade.webp" aria-label="Voir la photo en grand">
+    <img src="images/facade.webp" alt="Façade du gîte">
+  </button>
+
+  <button class="masonry__item" data-full="images/cuisine.webp" aria-label="Voir la photo en grand">
+    <img src="images/cuisine.webp" alt="Cuisine traditionnelle">
+  </button>
+
+  <button class="masonry__item" data-full="images/salon.webp" aria-label="Voir la photo en grand">
+    <img src="images/salon.webp" alt="Salon traditionnel">
+  </button>
+
+  <button class="masonry__item" data-full="images/salon-2.jpg" aria-label="Voir la photo en grand">
+    <img src="images/salon-2.jpg" alt="Espace détente traditionnel">
+  </button>
+
+  <button class="masonry__item" data-full="images/service.webp" aria-label="Voir la photo en grand">
+    <img src="images/service.webp" alt="Repas et service">
+  </button>
+
 </div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Fermer">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <img class="lightbox__img" id="lightboxImg" alt="">
+</div>
+
 
 
 <!-- Expériences -->
@@ -250,89 +275,40 @@
 </script>
 
 <script>
-  (function () {
-    const carousels = document.querySelectorAll('.carousel');
+  (function(){
+    const items = document.querySelectorAll('.masonry__item');
+    const box = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
 
-    carousels.forEach(carousel => {
-      const track = carousel.querySelector('.carousel__track');
-      const slides = Array.from(carousel.querySelectorAll('.carousel__slide'));
-      const prevBtn = carousel.querySelector('.carousel__btn--prev');
-      const nextBtn = carousel.querySelector('.carousel__btn--next');
-      const dotsWrap = carousel.querySelector('.carousel__dots');
+    function openLightbox(src, alt){
+      img.src = src;
+      img.alt = alt || '';
+      box.classList.add('is-open');
+      box.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
 
-      let index = 0;
-      let timer = null;
+    function closeLightbox(){
+      box.classList.remove('is-open');
+      box.setAttribute('aria-hidden', 'true');
+      img.src = '';
+      document.body.style.overflow = '';
+    }
 
-      const dots = slides.map((_, i) => {
-        const b = document.createElement('button');
-        b.className = 'carousel__dot' + (i === 0 ? ' is-active' : '');
-        b.type = 'button';
-        b.ariaLabel = `Aller à la photo ${i + 1}`;
-        b.addEventListener('click', () => goTo(i, true));
-        dotsWrap.appendChild(b);
-        return b;
+    items.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const image = btn.querySelector('img');
+        openLightbox(btn.dataset.full || image.src, image.alt);
       });
-
-      function update(){
-        track.style.transform = `translateX(-${index * 100}%)`;
-        dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
-      }
-
-      function goTo(i, userAction=false){
-        index = (i + slides.length) % slides.length;
-        update();
-        if(userAction) restartAutoplay();
-      }
-
-      function next(userAction=false){ goTo(index + 1, userAction); }
-      function prev(userAction=false){ goTo(index - 1, userAction); }
-
-      prevBtn.addEventListener('click', () => prev(true));
-      nextBtn.addEventListener('click', () => next(true));
-
-      carousel.addEventListener('keydown', (e) => {
-        if(e.key === 'ArrowLeft') prev(true);
-        if(e.key === 'ArrowRight') next(true);
-      });
-      carousel.tabIndex = 0;
-
-      const autoplay = carousel.dataset.autoplay === "true";
-      const interval = parseInt(carousel.dataset.interval || "3500", 10);
-
-      function startAutoplay(){
-        if(!autoplay) return;
-        stopAutoplay();
-        timer = setInterval(() => next(false), interval);
-      }
-
-      function stopAutoplay(){
-        if(timer) clearInterval(timer);
-        timer = null;
-      }
-
-      function restartAutoplay(){
-        stopAutoplay();
-        startAutoplay();
-      }
-
-      carousel.addEventListener('mouseenter', stopAutoplay);
-      carousel.addEventListener('mouseleave', startAutoplay);
-      carousel.addEventListener('focusin', stopAutoplay);
-      carousel.addEventListener('focusout', startAutoplay);
-
-      let startX = 0;
-      carousel.addEventListener('touchstart', (e) => startX = e.touches[0].clientX, {passive:true});
-      carousel.addEventListener('touchend', (e) => {
-        const endX = e.changedTouches[0].clientX;
-        const dx = endX - startX;
-        if(Math.abs(dx) > 40) dx < 0 ? next(true) : prev(true);
-      });
-
-      update();
-      startAutoplay();
     });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    box.addEventListener('click', (e) => { if(e.target === box) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
   })();
 </script>
+
 
 </body>
 </html>
