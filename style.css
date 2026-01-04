@@ -324,5 +324,96 @@ h1,h2,h3{ margin:0 0 12px; }
   margin: 0 auto;
   padding: 0 24px;
 }
+/* ===== Experiences (cards like screenshot) ===== */
+.experiences{
+  background: #f3f1ed; /* fond section comme la capture */
+}
+
+.experiences__title{
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 2.4vw, 40px);
+  margin: 0 0 22px;
+}
+
+.experiences__grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.expCard{
+  background: #fbf7f0;
+  border-radius: 20px;
+  padding: 26px 26px 24px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,.10), 0 2px 0 rgba(0,0,0,.03);
+  min-height: 250px;
+  display:flex;
+  flex-direction:column;
+}
+
+.expIcon{
+  width: 44px;
+  height: 44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom: 14px;
+  color: #d76724; /* orange */
+}
+
+.expIcon svg{
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.expCard h3{
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.expCard p{
+  margin: 0;
+  color: #5f6368;
+  line-height: 1.7;
+  font-size: 14.5px;
+  max-width: 38ch;
+}
+
+.experiences__cta{
+  display:flex;
+  justify-content:center;
+  margin-top: 22px;
+}
+
+.experiences .btn--light{
+  background: #f0c6ac; /* bouton pêche */
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 12px 24px rgba(0,0,0,.10);
+  color: #3a2a22;
+  padding: 12px 22px;
+}
+
+.experiences .btn--light:hover{
+  filter: brightness(.98);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 980px){
+  .experiences__grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .experiences__grid{ grid-template-columns: 1fr; }
+  .expCard{ min-height: unset; }
+}
+
 
 
