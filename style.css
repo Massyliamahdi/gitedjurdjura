@@ -287,7 +287,7 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 /* ===== Experiences (cards like screenshot) ===== */
 .experiences{
-  background: #f3f1ed; /* fond section comme la capture */
+  background: #234042; /* fond section comme la capture */
 }
 
 .experiences__title{
@@ -304,7 +304,7 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 .expCard{
-  background: #fbf7f0;
+  background: #efe5d7;
   border-radius: 20px;
   padding: 26px 26px 24px;
   border: 1px solid rgba(0,0,0,.06);
