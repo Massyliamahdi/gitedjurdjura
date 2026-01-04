@@ -439,7 +439,8 @@ h1,h2,h3{ margin:0 0 12px; }
 .carousel__slide img{
   width: 100%;
   height: 520px;             /* ajuste si tu veux plus haut/bas */
-  object-fit: cover;
+  object-fit: contain;
+  background: #f3f1ed;
   display: block;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
