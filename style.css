@@ -4,7 +4,7 @@
   --muted:#6b7280;
   --card:#ffffff;
   --accent:#b45309;
-  --accent2:#2f6f55;
+  --accent2:#234042;
   --shadow: 0 10px 30px rgba(0,0,0,.08);
   --radius: 18px;
 }
@@ -504,63 +504,102 @@ html {
   scroll-padding-top: 90px;
 }
 /* ===== QUICK INFO (bloc infos clés après le hero) ===== */
+/* ===== QUICK INFOS (version premium, cohérente avec ton thème) ===== */
+
 .quickinfo{
-  padding-top: 34px; /* plus compact car juste après le hero */
-  background: transparent;
+  padding: 46px 0 26px; /* moins de vide en bas */
 }
 
 .quickinfo__head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  display:block;
   margin-bottom: 18px;
 }
 
 .quickinfo__head h2{
-  margin: 0;
+  margin: 0 0 8px;
   font-weight: 400;
   letter-spacing: -0.02em;
 }
 
+.quickinfo__head .muted{
+  margin: 0;
+  max-width: 62ch;
+  color: rgba(35,64,66,.75);
+}
+
+/* Grille */
 .quickinfo__grid{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
+/* Carte */
 .qitem{
-  background: rgba(255,255,255,.72);
-  border: 1px solid rgba(0,0,0,.05);
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(0,0,0,.06);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: 0 14px 30px rgba(0,0,0,.08);
   padding: 16px 16px;
 
   display:flex;
   align-items:flex-start;
   gap: 12px;
+
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
+.qitem:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(0,0,0,.10);
+}
+
+/* Icône en badge */
 .qitem i{
-  width: 18px;
-  margin-top: 2px;
+  width: 34px;
+  height: 34px;
+  display:grid;
+  place-items:center;
+  border-radius: 10px;
+  background: rgba(47,111,85,.12); /* vert transparent */
   color: var(--accent2);
-  opacity: .95;
+  margin-top: 2px;
 }
 
+/* Textes */
 .qitem strong{
   display:block;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 3px;
+  opacity: .95;
 }
 
+.qvalue{
+  font-size: 15px;
+  color: rgba(35,64,66,.84);
+  line-height: 1.4;
+}
+
+/* CTA centré */
 .quickinfo__cta{
   display:flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content:flex-start; /* ou center si tu veux */
   margin-top: 16px;
+}
+
+/* Bouton doux (sous-thème) */
+.btn--soft{
+  background: rgba(255,255,255,.65);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+}
+
+.btn--soft:hover{
+  filter: brightness(.98);
+  transform: translateY(-1px);
 }
 
 /* Responsive */
@@ -569,6 +608,7 @@ html {
 }
 @media (max-width: 600px){
   .quickinfo__grid{ grid-template-columns: 1fr; }
+  .quickinfo__cta{ justify-content:center; }
 }
 
 
