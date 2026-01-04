@@ -291,6 +291,7 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 .experiences__title{
+  color: #efe5d7;
   font-weight: 400;
   letter-spacing: -0.02em;
   font-size: clamp(28px, 2.4vw, 40px);
@@ -321,17 +322,14 @@ h1,h2,h3{ margin:0 0 12px; }
   align-items:center;
   justify-content:center;
   margin-bottom: 14px;
-  color: #d76724; /* orange */
+
+  border-radius: 12px;
+  background: rgba(239,229,215,.55); /* beige doux */
+  color: var(--accent2);             /* vert */
 }
 
-.expIcon svg{
-  width: 28px;
-  height: 28px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.expIcon i{
+  font-size: 20px;
 }
 
 .expCard h3{
