@@ -59,25 +59,31 @@
     </section>
 
     <!-- Galerie -->
-    <section id="galerie" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Galerie</h2>
-          <p class="muted">Quelques photos du gîte et des activités.</p>
-        </div>
+   <div class="carousel" data-autoplay="true" data-interval="3500">
+  <button class="carousel__btn carousel__btn--prev" aria-label="Photo précédente">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
 
-        <div class="grid">
-          <figure class="card"><img src="images/randonnee.jpg" alt="Randonnée en montagne"></figure>
-          <figure class="card"><img src="images/rondonnees.jpg" alt="Paysage de montagne"></figure>
-          <figure class="card"><img src="images/randonne-papa.jpg" alt="Randonnée neige"></figure>
-          <figure class="card"><img src="images/randonnee-3.jpg" alt="Randonnée en groupe"></figure>
+  <div class="carousel__viewport">
+    <div class="carousel__track">
+      <figure class="carousel__slide"><img src="images/randonnee.jpg" alt="Randonnée en montagne"></figure>
+      <figure class="carousel__slide"><img src="images/rondonnees.jpg" alt="Paysage de montagne"></figure>
+      <figure class="carousel__slide"><img src="images/randonne-papa.jpg" alt="Randonnée neige"></figure>
+      <figure class="carousel__slide"><img src="images/randonnee-3.jpg" alt="Randonnée en groupe"></figure>
 
-          <figure class="card"><img src="images/salon.webp" alt="Salon traditionnel"></figure>
-          <figure class="card"><img src="images/salon-2.jpg" alt="Espace détente traditionnel"></figure>
-          <figure class="card"><img src="images/service.webp" alt="Repas et service"></figure>
-        </div>
-      </div>
-    </section>
+      <figure class="carousel__slide"><img src="images/salon.webp" alt="Salon traditionnel"></figure>
+      <figure class="carousel__slide"><img src="images/salon-2.jpg" alt="Espace détente traditionnel"></figure>
+      <figure class="carousel__slide"><img src="images/service.webp" alt="Repas et service"></figure>
+    </div>
+  </div>
+
+  <button class="carousel__btn carousel__btn--next" aria-label="Photo suivante">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+
+  <div class="carousel__dots" aria-label="Navigation galerie"></div>
+</div>
+
 
 <!-- Expériences -->
 <section id="services" class="section experiences">
