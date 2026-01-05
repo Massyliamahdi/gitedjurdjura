@@ -436,29 +436,32 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* Responsive */
 /* ===== STACKS MOBILE CENTER + NO OVERFLOW ===== */
-@media (max-width: 520px){
+/* ===== STACKS : téléphone = vertical + centré ===== */
+@media (max-width: 600px){
   .stacks__grid{
-    justify-items: center;   /* ✅ centre chaque colonne */
+    grid-template-columns: 1fr;  /* ✅ 1 pile par ligne */
+    gap: 44px;                  /* espace entre piles */
+    justify-items: center;      /* ✅ centre chaque pile */
   }
 
   .stack{
     width: 100%;
-    max-width: 340px;        /* limite joli */
+    max-width: 360px;
+    text-align: center;
   }
 
   .image-stack{
-    max-width: 300px;
-    height: 380px;
-    overflow: visible;       /* ok, mais… */
+    max-width: 320px;           /* adapte à l'écran */
+    width: 100%;
+    height: 380px;              /* un peu plus grand sur mobile */
+    margin: 0 auto;
   }
 
-  /* ✅ Réduire le débordement des rotations sur petit écran */
+  /* Réduit le débordement visuel */
   .image-stack .layer-1{ transform: rotate(-5deg) translateX(-6px); }
   .image-stack .layer-3{ transform: rotate(5deg) translateX(6px); }
-
-  .stack:hover .layer-1{ transform: rotate(-8deg) translateX(-10px); }
-  .stack:hover .layer-3{ transform: rotate(8deg) translateX(10px); }
 }
+
 
 
 /* ===== NAV style pill ===== */
