@@ -450,12 +450,14 @@ h1,h2,h3{ margin:0 0 12px; }
     grid-template-columns: 1fr;  /* ✅ 1 pile par ligne */
     gap: 44px;                  /* espace entre piles */
     justify-items: center;      /* ✅ centre chaque pile */
+    justify-content: center;  /* centre la colonne */
   }
 
   .stack{
     width: 100%;
     max-width: 360px;
     text-align: center;
+    justify-items: center;
   }
 
   .image-stack{
