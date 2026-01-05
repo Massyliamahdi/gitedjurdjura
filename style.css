@@ -397,6 +397,7 @@ h1,h2,h3{ margin:0 0 12px; }
   gap: 72px 96px;
   align-items: start;
   justify-items: center;
+  justify-content: center;
   margin: 0 auto; 
 }
 
@@ -417,7 +418,7 @@ h1,h2,h3{ margin:0 0 12px; }
   cursor: pointer;
   user-select: none;
   margin: 0 auto;
-  width: 320px;      /* ✅ Taille fixe de la pile */
+  width: 370px;      /* ✅ Taille fixe de la pile */
   height: 440px;     /* ✅ Fixe la hauteur de la pile */
   max-width: 100%
 }
