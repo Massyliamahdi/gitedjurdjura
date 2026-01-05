@@ -373,14 +373,14 @@ h1,h2,h3{ margin:0 0 12px; }
   .experiences__grid{ grid-template-columns: 1fr; }
   .expCard{ min-height: unset; }
 }
+
+
+
+
 /* ===== Galerie chic uniforme ===== */
 /* ===== STACKS (piles d'images + mini phrase) ===== */
 .stacks{
   padding: 64px 0;
-}
-/* élargit uniquement la section stacks */
-.stacks .container{
-  max-width: 1300px;
 }
 
 
@@ -417,10 +417,9 @@ h1,h2,h3{ margin:0 0 12px; }
   cursor: pointer;
   user-select: none;
   width: 100%;
-  max-width: 320px;
-  height: auto;
+  max-width: 260px;
+  height: 360;
   margin: 0 auto;
-  aspect-ratio: 4 / 5;
 }
 
 .image-stack img{
