@@ -389,8 +389,11 @@ h1,h2,h3{ margin:0 0 12px; }
 .stacks__grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
-  align-items:start;
+  gap: 48px;
+  align-items: start;
+  justify-items: center;
+  max-width: 1200px;        /* limite propre */
+  margin: 0 auto; 
 }
 
 .stack{
@@ -410,8 +413,8 @@ h1,h2,h3{ margin:0 0 12px; }
   cursor: pointer;
   user-select: none;
   width: 100%;
-  max-width: 260px;
-  height: 360px;
+  max-width: 320px;
+  height: 420px;
   margin: 0 auto;
 }
 
@@ -426,13 +429,13 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 /* Positionnement en éventail */
-.image-stack .layer-1{ transform: rotate(-6deg) translateX(-10px); z-index:1; }
+.image-stack .layer-1{ transform: rotate(-7deg) translateX(-12px); z-index:1; }
 .image-stack .layer-2{ transform: rotate(0deg); z-index:2; }
-.image-stack .layer-3{ transform: rotate(6deg) translateX(10px); z-index:3; }
+.image-stack .layer-3{ transform: rotate(7deg) translateX(12px); z-index:3; }
 
 /* Petit effet hover */
-.stack:hover .layer-1{ transform: rotate(-10deg) translateX(-18px); }
-.stack:hover .layer-3{ transform: rotate(10deg) translateX(18px); }
+.stack:hover .layer-1{ transform: rotate(-11deg) translateX(-20px); }
+.stack:hover .layer-3{ transform: rotate(11deg) translateX(20px); }
 
 /* Responsive */
 /* ===== STACKS MOBILE CENTER + NO OVERFLOW ===== */
