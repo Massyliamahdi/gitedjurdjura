@@ -394,7 +394,7 @@ h1,h2,h3{ margin:0 0 12px; }
 .stacks__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 56px;
+  gap: 76px;
   justify-items: center; /* centre chaque colonne */
   justify-content: center; /* centre la grille */
   margin: 0 auto;
