@@ -435,12 +435,31 @@ h1,h2,h3{ margin:0 0 12px; }
 .stack:hover .layer-3{ transform: rotate(10deg) translateX(18px); }
 
 /* Responsive */
-@media (max-width: 900px){
+/* ===== STACKS MOBILE CENTER + NO OVERFLOW ===== */
+@media (max-width: 520px){
   .stacks__grid{
-    grid-template-columns: 1fr;
-    gap: 48px;
+    justify-items: center;   /* ✅ centre chaque colonne */
   }
+
+  .stack{
+    width: 100%;
+    max-width: 340px;        /* limite joli */
+  }
+
+  .image-stack{
+    max-width: 300px;
+    height: 380px;
+    overflow: visible;       /* ok, mais… */
+  }
+
+  /* ✅ Réduire le débordement des rotations sur petit écran */
+  .image-stack .layer-1{ transform: rotate(-5deg) translateX(-6px); }
+  .image-stack .layer-3{ transform: rotate(5deg) translateX(6px); }
+
+  .stack:hover .layer-1{ transform: rotate(-8deg) translateX(-10px); }
+  .stack:hover .layer-3{ transform: rotate(8deg) translateX(10px); }
 }
+
 
 /* ===== NAV style pill ===== */
 
@@ -525,6 +544,8 @@ h1,h2,h3{ margin:0 0 12px; }
 .topnav__btn:hover {
   filter: brightness(1.15);
 }
+
+
 
 /* Fix scroll target offset */
 html {
@@ -691,6 +712,48 @@ html {
   transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(0,0,0,.18);
   filter: brightness(1.05);
+}
+
+/* ===== NAV MOBILE FIX ===== */
+@media (max-width: 520px){
+  .topnav{
+    padding: 10px 14px;      /* au lieu de 0 40px */
+    height: auto;            /* laisse respirer */
+    gap: 10px;
+    flex-wrap: wrap;         /* ✅ permet de passer à la ligne */
+    justify-content: center; /* centre proprement */
+  }
+
+  .topnav__left{
+    width: 100%;
+    justify-content: center; /* centre GJ + liens */
+    gap: 14px;
+    flex-wrap: wrap;         /* ✅ évite la coupure */
+  }
+
+  .nav-separator{
+    display: none;           /* sur mobile ça prend de la place pour rien */
+  }
+
+  .topnav__left a{
+    font-size: 0.95rem;
+    padding: 6px 8px;        /* zone cliquable */
+  }
+
+  .topnav__btn{
+    width: 100%;             /* bouton sur une ligne */
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+
+  /* Comme la nav devient plus haute, on augmente l’offset */
+  .hero{
+    padding-top: 150px;
+  }
+  html{
+    scroll-padding-top: 160px;
+  }
 }
 
 
