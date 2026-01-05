@@ -394,7 +394,7 @@ h1,h2,h3{ margin:0 0 12px; }
 .stacks__grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 72px ;
+  gap: 56px ;
   align-items: start;
   justify-items: center;
   justify-content: center;
