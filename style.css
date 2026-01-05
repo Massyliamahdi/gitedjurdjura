@@ -394,12 +394,12 @@ h1,h2,h3{ margin:0 0 12px; }
 .stacks__grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 72px 96px;
+  gap: 72px ;
   align-items: start;
   justify-items: center;
   justify-content: center;
   margin: 0 auto; 
-  transform: translateX(-20px);
+  transform: translateX(-30px);
 }
 
 .stack{
@@ -408,9 +408,11 @@ h1,h2,h3{ margin:0 0 12px; }
 
 .stack__title{
   font-size: 15px;
+  text-align: left;
+  max-width: 360px;
+  width: 100%;
   font-weight: 500;
   letter-spacing: .02em;
-  margin-bottom: 14px;
   color: var(--text);
 }
 
@@ -419,7 +421,7 @@ h1,h2,h3{ margin:0 0 12px; }
   cursor: pointer;
   user-select: none;
   margin: 0 auto;
-  width: 500px;      /* ✅ Taille fixe de la pile */
+  width: 600px;      /* ✅ Taille fixe de la pile */
   height: 370px;     /* ✅ Fixe la hauteur de la pile */
   max-width: 100%
 }
