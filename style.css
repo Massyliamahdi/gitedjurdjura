@@ -417,13 +417,15 @@ h1,h2,h3{ margin:0 0 12px; }
   cursor: pointer;
   user-select: none;
   margin: 0 auto;
-  max-width: 100%; 
+  width: 260px;      /* ✅ Taille fixe de la pile */
+  height: 360px;     /* ✅ Fixe la hauteur de la pile */
+  max-width: 100%
 }
 
 .image-stack img{
   position:absolute;
-  width:auto;
-  height:auto;
+  width:100%;
+  height:100%;
   max-width: 260px;
   object-fit:cover;
   border-radius: 22px;
