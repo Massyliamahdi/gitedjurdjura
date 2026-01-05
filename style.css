@@ -394,7 +394,7 @@ h1,h2,h3{ margin:0 0 12px; }
 .stacks__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 96px;
+  gap: 120px;
   justify-items: center; /* centre chaque colonne */
   justify-content: center; /* centre la grille */
   margin: 0 auto;
@@ -422,7 +422,7 @@ h1,h2,h3{ margin:0 0 12px; }
   user-select: none;
   
   width: 360px;      /* largeur cohérente dans la grille */
-  height: 240px;     /* hauteur cohérente */
+  height: 360px;     /* hauteur cohérente */
 }
 
 .image-stack img {
