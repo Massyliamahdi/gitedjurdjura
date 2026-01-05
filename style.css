@@ -418,8 +418,8 @@ h1,h2,h3{ margin:0 0 12px; }
   cursor: pointer;
   user-select: none;
   margin: 0 auto;
-  width: 370px;      /* ✅ Taille fixe de la pile */
-  height: 440px;     /* ✅ Fixe la hauteur de la pile */
+  width: 440px;      /* ✅ Taille fixe de la pile */
+  height: 370px;     /* ✅ Fixe la hauteur de la pile */
   max-width: 100%
 }
 
