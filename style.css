@@ -421,8 +421,8 @@ h1,h2,h3{ margin:0 0 12px; }
   cursor: pointer;
   user-select: none;
   
-  width: 400px;      /* largeur cohérente dans la grille */
-  height: 400px;     /* hauteur cohérente */
+  width: 450px;      /* largeur cohérente dans la grille */
+  height: 450px;     /* hauteur cohérente */
 }
 
 .image-stack img {
