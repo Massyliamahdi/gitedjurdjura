@@ -422,7 +422,7 @@ h1,h2,h3{ margin:0 0 12px; }
   user-select: none;
   
   width: 360px;      /* largeur cohérente dans la grille */
-  height: 200px;     /* hauteur cohérente */
+  height: 240px;     /* hauteur cohérente */
 }
 
 .image-stack img {
