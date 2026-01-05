@@ -394,7 +394,7 @@ h1,h2,h3{ margin:0 0 12px; }
 .stacks__grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 56px;
+  gap: 72px;
   align-items: start;
   justify-items: center;
   margin: 0 auto; 
@@ -417,8 +417,8 @@ h1,h2,h3{ margin:0 0 12px; }
   cursor: pointer;
   user-select: none;
   margin: 0 auto;
-  width: 260px;      /* ✅ Taille fixe de la pile */
-  height: 360px;     /* ✅ Fixe la hauteur de la pile */
+  width: 320px;      /* ✅ Taille fixe de la pile */
+  height: 440px;     /* ✅ Fixe la hauteur de la pile */
   max-width: 100%
 }
 
