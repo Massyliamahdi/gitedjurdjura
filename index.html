@@ -300,45 +300,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-(function(){
-  const items = document.querySelectorAll('.image-stack');
-  const box = document.getElementById('lightbox');
-  const img = document.getElementById('lightboxImg');
-  const closeBtn = document.getElementById('lightboxClose');
-
-  function openLightbox(src, alt){
-    img.src = src;
-    img.alt = alt || '';
-    box.classList.add('is-open');
-    box.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox(){
-    box.classList.remove('is-open');
-    box.setAttribute('aria-hidden', 'true');
-    img.src = '';
-    document.body.style.overflow = '';
-  }
-
-  items.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const image = btn.querySelector('img');
-      openLightbox(btn.dataset.full || image.src, image.alt);
-    });
-  });
-
-  closeBtn.addEventListener('click', closeLightbox);
-  box.addEventListener('click', (e) => { if(e.target === box) closeLightbox(); });
-  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
-})();
-</script>
-
- <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
 <script>
 (function(){
   // Pour chaque pile d'images, on fait "tourner" les 3 images au clic
