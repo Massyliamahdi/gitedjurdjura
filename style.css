@@ -446,6 +446,10 @@ h1,h2,h3{ margin:0 0 12px; }
 /* ===== STACKS MOBILE CENTER + NO OVERFLOW ===== */
 /* ===== STACKS : téléphone = vertical + centré ===== */
 @media (max-width: 600px){
+   .stacks .container{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
   .stacks__grid{
     grid-template-columns: 1fr;  /* ✅ 1 pile par ligne */
     gap: 44px;                  /* espace entre piles */
@@ -454,6 +458,7 @@ h1,h2,h3{ margin:0 0 12px; }
   }
 
   .stack{
+    display: grid;
     width: 100%;
     max-width: 360px;
     text-align: center;
