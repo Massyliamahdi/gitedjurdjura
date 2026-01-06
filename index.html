@@ -274,17 +274,45 @@
           </div>
 
           <!-- Colonne droite -->
-          <div class="contact2__right">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1076.001841504502!2d3.966321518086394!3d36.52784954629929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sfr!2sca!4v1767488886698!5m2!1sfr!2sca"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
+          <!-- COLONNE DROITE : FORMULAIRE -->
+      <div class="contact2__right">
+        <form action="https://formsubmit.co/gitedudjurdjra@gmail.com" method="POST" class="contact2__form">
 
-        </div>
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nouveau message depuis le site Gîte du Djurdjura">
+          <input type="hidden" name="_template" value="table">
+
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="dates">Dates du séjour :</label>
+          <input type="date" id="dates" name="dates">
+
+          <label for="nights">Durée du séjour (nuits) :</label>
+          <input type="number" id="nights" name="nights" min="1" placeholder="Ex : 3 nuits">
+
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn btn--explore">Envoyer</button>
+        </form>
       </div>
-    </section>
+
+    </div>
+
+    <!-- CARTE EN DESSOUS DES DEUX COLONNES -->
+    <div class="contact2__map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1076.001841504502!2d3.966321518086394!3d36.52784954629929"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
 
   </main>
 
