@@ -307,7 +307,7 @@ h1,h2,h3{ margin:0 0 12px; }
 /* Effet focus moderne */
 .contactForm input:focus,
 .contactForm textarea:focus {
-  border-color: #0c4747;
+  border-color: var(--accent2);
 }
 
 /* — Bouton stylé — */
@@ -326,6 +326,26 @@ h1,h2,h3{ margin:0 0 12px; }
 .form-btn:hover {
   background: #f7a67a;
 }
+
+/* Sélection en cours: les jours entre les deux dates */
+.litepicker .is-in-range {
+  background: rgba(16, 74, 64, 0.20) !important; /* 🌿 vert forêt transparent, ton site */
+}
+
+/* La date d'arrivée et la date de départ */
+.litepicker .is-start-date,
+.litepicker .is-end-date {
+  background: #104a40 !important; /* 🌿 vert foncé ton site */
+  color: #fff !important;
+}
+
+/* Hover */
+.litepicker .day-item:hover {
+  background: rgba(16, 74, 64, 0.35) !important;
+  color: white !important;
+}
+
+
 
 
 /* Carte en dessous */
