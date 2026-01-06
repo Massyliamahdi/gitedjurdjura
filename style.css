@@ -1,16 +1,16 @@
 :root{
-  --bg:#fffbf2;
+  --bg:#efe5d7;
   --text:#234042;
   --muted:#6b7280;
   --card:#ffffff;
   --accent:#b45309;
-  --accent2:#2f6f55;
+  --accent2:#234042;
   --shadow: 0 10px 30px rgba(0,0,0,.08);
   --radius: 18px;
 }
 
 *{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, system-ui, -apple-system, Segoe UI, Roboto, Arial; color:var(--text); background:var(--bg); }
+html,body{ margin:0; padding:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--text); background:var(--bg); }
 a{ color:inherit; }
 .container{ max-width:1100px; margin:0 auto; padding:0 18px; }
 .section{ padding:56px 0; }
@@ -18,36 +18,81 @@ a{ color:inherit; }
 h1,h2,h3{ margin:0 0 12px; }
 .muted{ color:var(--muted); line-height:1.6; }
 
-.hero{
-  position:relative;
-  min-height:78vh;
+.hero {
+  position: relative;
+  min-height: 100vh;
   background-image:url("images/randonne-papa.jpg");
   background-size:cover;
   background-position:center;
   color:white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding-top: 120px; /* nav fixed offset */
 }
 .hero__overlay{
   position:absolute; inset:0;
   background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.45), rgba(0,0,0,.65));
 }
-.nav{
-  position:relative;
-  display:flex; justify-content:space-between; align-items:center;
-  padding:18px 18px;
-  max-width:1100px; margin:0 auto;
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  letter-spacing:.5px;
 }
-.brand{ font-weight:700; letter-spacing:.5px; }
+.logo{
+  height:50px;
+  width:auto;
+  display:block;
+}
+
 .nav__links{ display:flex; gap:16px; align-items:center; }
 .nav__links a{ text-decoration:none; opacity:.95; }
 .nav__links a:hover{ opacity:1; text-decoration:underline; text-underline-offset:6px; }
 
 .hero__content{
-  position:relative;
-  max-width:1100px; margin:0 auto;
-  padding:70px 18px 30px;
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 18px;
+
+  /* ✅ Pour placer le texte à gauche comme Webflow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* ✔ centre horizontalement */
+  justify-content: center;    /* ✔ centre verticalement */
+  text-align: center; 
 }
-.hero__content h1{ font-size:clamp(28px, 4vw, 46px); line-height:1.1; }
-.hero__content p{ max-width:680px; opacity:.95; }
+
+/* ✅ Titre grand + très fin */
+.hero__content h1{
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  color: #efe5d7;
+
+  font-size: clamp(72px, 10vw, 140px);
+}
+
+/* ✅ Petite phrase chaleureuse sous le titre */
+.hero__content p{
+  margin-top: 18px;
+  max-width: 640px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: .92;
+  color: #efe5d7;
+  font-family: sans-serif;
+}
+
 
 .badges{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
 .badges span{
@@ -117,21 +162,749 @@ h1,h2,h3{ margin:0 0 12px; }
 .info ul{ margin:0; padding-left:18px; color:var(--muted); line-height:1.8; }
 @media (max-width: 860px){ .info{ grid-template-columns: 1fr; } }
 
-.contact{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
+
+.footer--dark{
+  background: #234042;
+  color: rgba(255,255,255,.85);
+  margin-top: 40px;
+}
+
+.footer__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding: 22px 0;
+}
+
+.footer--dark a{
+  color: rgba(255,255,255,.85);
+  text-decoration:none;
+}
+.footer--dark a:hover{
+  color: #fff;
+  text-decoration:underline;
+  text-underline-offset: 6px;
+}
+
+.footer__links{
+  display:flex;
   gap:14px;
 }
-.contact__card{
-  background:var(--card);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:18px;
-}
-@media (max-width: 860px){ .contact{ grid-template-columns: 1fr; } }
 
-.footer{
-  padding:26px 18px;
-  text-align:center;
-  color:var(--muted);
+@media (max-width: 700px){
+  .footer__inner{ flex-direction:column; text-align:center; }
 }
+
+/* === CONTACT style Webflow (sans titre "Contact") === */
+.contact2__grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 52px;
+  align-items:start;
+  margin-top: 12px;
+}
+
+.contact2__title{
+  margin: 0 0 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  font-size: clamp(26px, 2.2vw, 34px);
+}
+
+.contact2__lead{
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 16.5px;
+  max-width: 580px;
+}
+
+.contact2__rows{
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* Lignes icône + texte (style propre) */
+.contact2__row{
+  display:flex;
+  align-items:flex-start;
+  gap: 12px;
+  text-decoration:none;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.contact2__row strong{
+  font-weight: 600;
+}
+
+.contact2__row i{
+  width: 18px;
+  margin-top: 3px;
+  color: var(--accent2);
+  opacity: .95;
+}
+
+/* Hover discret comme Webflow */
+.contact2__row:hover{
+ color: var(--accent2);
+}
+
+/* Carte */
+
+/* FORMULAIRE STYLE "WEBFLOW-LIKE" */
+.contactForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* — Grille 2 colonnes comme sur ta capture — */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 32px; /* espace entre les colonnes */
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / 3; /* textarea sur toute la largeur */
+}
+
+/* — Style des labels — */
+.field label {
+  font-size: 12px;
+  letter-spacing: .05em;
+  font-weight: 600;
+  color: #2f3e3e;
+  text-transform: uppercase;
+}
+
+/* — Style des inputs identique à ta photo — */
+.contactForm input,
+.contactForm textarea {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.4px solid rgba(0,0,0,.25);
+  font-size: 16px;
+
+  background: #efe5d7;  /* même couleur que ton background */
+  color: #2a2a2a;
+
+  outline: none;
+}
+
+/* Effet focus moderne */
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: var(--accent2);
+}
+
+/* — Bouton stylé — */
+.form-btn {
+  background: #f8b897;
+  border: none;
+  color: #333;
+  padding: 14px 24px;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.form-btn:hover {
+  background: #f7a67a;
+}
+
+/* Sélection en cours: les jours entre les deux dates */
+.litepicker .is-in-range {
+  background: rgba(16, 74, 64, 0.20) !important; /* 🌿 vert forêt transparent, ton site */
+}
+
+/* La date d'arrivée et la date de départ */
+.litepicker .is-start-date,
+.litepicker .is-end-date {
+  background: #104a40 !important; /* 🌿 vert foncé ton site */
+  color: #fff !important;
+}
+
+/* Hover */
+.litepicker .day-item:hover {
+  background: rgba(16, 74, 64, 0.35) !important;
+  color: white !important;
+}
+
+
+/*placeholder*/
+::placeholder {
+  color: #b5a89b; /* beige doux du thème */
+  opacity: 1;     /* pour être bien visible */
+  font-size: 15px;
+}
+/* Police uniforme pour tout le formulaire */
+/* Applique la police Inter à tout le formulaire */
+.contactForm,
+.contactForm label,
+.contactForm input,
+.contactForm textarea,
+.contactForm button {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Labels */
+.contactForm label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+
+/* Champs de saisie */
+.contactForm input,
+.contactForm textarea {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+
+
+/* Carte en dessous */
+.contact2__map {
+  margin-top: 40px;
+}
+
+.contact2__map iframe {
+  width: 100%;
+  height: 340px;
+  border-radius: 22px;
+  border: 0;
+  box-shadow: var(--shadow);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .contact2__grid{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .contact2__right iframe{ height: 280px; }
+}
+/* Section contact en pleine largeur */
+.contact2--full{
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* sort du container centré */
+  padding: 72px 0;
+}
+
+/* Contenu interne limité mais aligné comme Webflow */
+.contact2--full .contact2__grid{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+/* ===== Experiences (cards like screenshot) ===== */
+.experiences{
+  background: #234042; /* fond section comme la capture */
+}
+
+.experiences__title{
+  color: #efe5d7;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-size: clamp(28px, 2.4vw, 40px);
+  margin: 0 0 22px;
+}
+
+.experiences__grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.expCard{
+  background: #efe5d7;
+  border-radius: 20px;
+  padding: 26px 26px 24px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,.10), 0 2px 0 rgba(0,0,0,.03);
+  min-height: 250px;
+  display:flex;
+  flex-direction:column;
+}
+
+.expIcon{
+  width: 44px;
+  height: 44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom: 14px;
+
+  border-radius: 12px;
+  background: rgba(239,229,215,.55); /* beige doux */
+  color: var(--accent2);             /* vert */
+}
+
+.expIcon i{
+  font-size: 20px;
+}
+
+.expCard h3{
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.expCard p{
+  margin: 0;
+  color: #5f6368;
+  line-height: 1.7;
+  font-size: 14.5px;
+  max-width: 38ch;
+}
+
+.experiences__cta{
+  display:flex;
+  justify-content:center;
+  margin-top: 22px;
+}
+
+.experiences .btn--light{
+  background: #f0c6ac; /* bouton pêche */
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 12px 24px rgba(0,0,0,.10);
+  color: #3a2a22;
+  padding: 12px 22px;
+}
+
+.experiences .btn--light:hover{
+  filter: brightness(.98);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 980px){
+  .experiences__grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .experiences__grid{ grid-template-columns: 1fr; }
+  .expCard{ min-height: unset; }
+}
+
+
+
+
+/* ===== Galerie chic uniforme ===== */
+/* ===== STACKS (piles d'images + mini phrase) ===== */
+.stacks{
+  padding: 64px 0;
+}
+
+
+/* ===== STACKS – 3 piles sur une ligne ===== */
+
+.stacks__head{
+  text-align:center;
+  margin-bottom: 36px;
+}
+
+.stacks__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 100px;
+  justify-items: center; /* centre chaque colonne */
+  justify-content: center; /* centre la grille */
+  margin: 0 auto;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre titre + image */
+}
+
+
+.stack__title{
+  font-size: 15px;
+  text-align: left;
+  max-width: 360px;
+  width: 100%;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--text);
+}
+
+.image-stack {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  
+  width: 450px;      /* largeur cohérente dans la grille */
+  height: 450px;     /* hauteur cohérente */
+}
+
+.image-stack img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.12);
+  transition: transform .35s ease;
+}
+
+/* Positionnement en éventail */
+.image-stack .layer-1{ transform: rotate(-7deg) translateX(-12px); z-index:1; }
+.image-stack .layer-2{ transform: rotate(0deg); z-index:2; }
+.image-stack .layer-3{ transform: rotate(7deg) translateX(12px); z-index:3; }
+
+/* Petit effet hover */
+.stack:hover .layer-1{ transform: rotate(-11deg) translateX(-20px); }
+.stack:hover .layer-3{ transform: rotate(11deg) translateX(20px); }
+
+/* Responsive */
+/* ===== STACKS MOBILE CENTER + NO OVERFLOW ===== */
+/* ===== STACKS : téléphone = vertical + centré ===== */
+@media (max-width: 600px){
+   .stacks .container{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .stacks__grid{
+    grid-template-columns: 1fr;  /* ✅ 1 pile par ligne */
+    gap: 44px;                  /* espace entre piles */
+    justify-items: center;      /* ✅ centre chaque pile */
+    justify-content: center;  /* centre la colonne */
+  }
+
+  .stack{
+    display: grid;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .image-stack{
+    max-width: 320px;           /* adapte à l'écran */
+    width: 100%;      
+    margin: 0 auto;
+    
+  }
+
+  /* Réduit le débordement visuel */
+  .image-stack .layer-1{ transform: rotate(-5deg) translateX(-6px); }
+  .image-stack .layer-3{ transform: rotate(5deg) translateX(6px); }
+}
+
+
+
+/* ===== NAV style pill ===== */
+
+/* === NAV FULL-WIDTH – STYLE PREMIUM === */
+/* === NAV KALEO FULL-WIDTH GLASS === */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 72px;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* EFFET VERRE */
+  background: #efe5d7;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+
+  z-index: 2000;
+}
+
+/* LEFT SIDE LINKS */
+.topnav__left {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.topnav__left a {
+  color: #234042; /* IMPORTANT POUR HERO SOMBRE */
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.92;
+}
+
+.topnav__left a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* BRAND */
+.brand {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  color: #234042;
+}
+
+/* Vertical line separator */
+.nav-separator {
+  width: 1px;
+  height: 22px;
+  background: rgba(35,64,66,0.18);
+  display: inline-block;
+  margin: 0 18px;
+}
+
+/* RIGHT BUTTON */
+.topnav__btn {
+  background: #234042;
+  color: #efe5d7;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.topnav__btn:hover {
+  filter: brightness(1.15);
+}
+
+
+
+/* Fix scroll target offset */
+html {
+  scroll-padding-top: 90px;
+}
+/* ===== QUICK INFO (bloc infos clés après le hero) ===== */
+/* ===== QUICK INFOS (version premium, cohérente avec ton thème) ===== */
+
+.quickinfo{
+  padding: 46px 0 26px; /* moins de vide en bas */
+}
+
+.quickinfo__head{
+  display:block;
+  margin-bottom: 18px;
+}
+
+.quickinfo__head h2{
+  margin: 0 0 8px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.quickinfo__head .muted{
+  margin: 0;
+  max-width: 62ch;
+  color: rgba(35,64,66,.75);
+}
+
+/* Grille */
+.quickinfo__grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* Carte */
+.qitem{
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 30px rgba(0,0,0,.08);
+  padding: 16px 16px;
+
+  display:flex;
+  align-items:flex-start;
+  gap: 12px;
+
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.qitem:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(0,0,0,.10);
+}
+
+/* Icône en badge */
+.qitem i{
+  width: 34px;
+  height: 34px;
+  display:grid;
+  place-items:center;
+  border-radius: 10px;
+  background: rgba(47,111,85,.12); /* vert transparent */
+  color: var(--accent2);
+  margin-top: 2px;
+}
+
+/* Textes */
+.qitem strong{
+  display:block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 3px;
+  opacity: .95;
+}
+
+.qvalue{
+  font-size: 15px;
+  color: rgba(35,64,66,.84);
+  line-height: 1.4;
+}
+
+/* CTA centré */
+.quickinfo__cta{
+  display:flex;
+  justify-content:center; /* ou center si tu veux */
+  margin-top: 22px;
+}
+
+/* ===== Bouton galerie premium ===== */
+
+.btn--gallery{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 26px;
+  border-radius: 10px; /* rectangulaire doux */
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .02em;
+
+  background: #234042;      /* vert profond du site */
+  color: #efe5d7;           /* beige clair */
+  text-decoration: none;
+
+  border: 1px solid rgba(0,0,0,.12);
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.btn--gallery i{
+  font-size: 16px;
+  opacity: .9;
+}
+
+.btn--gallery:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.16);
+  filter: brightness(1.05);
+}
+
+
+/* Responsive */
+@media (max-width: 980px){
+  .quickinfo__grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px){
+  .quickinfo__grid{ grid-template-columns: 1fr; }
+  .quickinfo__cta{ justify-content:center; }
+}
+/* ===== Bouton Explorer premium ===== */
+
+.btn--explore{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .02em;
+
+  background: #f0c6ac;      /* pêche doux comme avant */
+  color: #3a2a22;           /* brun chaud */
+  text-decoration: none;
+
+  border: 1px solid rgba(0,0,0,.10);
+  box-shadow: 0 14px 30px rgba(0,0,0,.14);
+
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.btn--explore i{
+  font-size: 16px;
+  opacity: .9;
+}
+
+.btn--explore:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+  filter: brightness(1.05);
+}
+
+/* ===== NAV MOBILE FIX ===== */
+@media (max-width: 520px){
+  .topnav{
+    padding: 10px 14px;      /* au lieu de 0 40px */
+    height: auto;            /* laisse respirer */
+    gap: 10px;
+    flex-wrap: wrap;         /* ✅ permet de passer à la ligne */
+    justify-content: center; /* centre proprement */
+  }
+
+  .topnav__left{
+    width: 100%;
+    justify-content: center; /* centre GJ + liens */
+    gap: 14px;
+    flex-wrap: wrap;         /* ✅ évite la coupure */
+  }
+
+  .nav-separator{
+    display: none;           /* sur mobile ça prend de la place pour rien */
+  }
+
+  .topnav__left a{
+    font-size: 0.95rem;
+    padding: 6px 8px;        /* zone cliquable */
+  }
+
+  .topnav__btn{
+    width: 100%;             /* bouton sur une ligne */
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+
+  /* Comme la nav devient plus haute, on augmente l’offset */
+  .hero{
+    padding-top: 150px;
+  }
+  html{
+    scroll-padding-top: 160px;
+  }
+}
+
+
+
+

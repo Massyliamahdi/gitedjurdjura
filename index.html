@@ -3,148 +3,405 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gîte du Djurdjura— Séjour & Randonnées</title>
+  <title>Gîte du Djurdjura — Séjour & Randonnées</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
+  <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+
+
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="images/site.webmanifest">
+
+  <!-- Police -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+
+  <div id="top"></div>
+
   <header class="hero">
     <div class="hero__overlay"></div>
-    <nav class="nav">
-      <div class="brand"> <img src="images/Gîte du Djurdjura-logo-transparent.png" alt="Logo Gîte du Djurdjura" class="logo"></div>
-      <div class="nav__links">
-        <a href="#galerie">Galerie</a>
-        <a href="#services">Services</a>
-        <a href="#contact" class="btn btn--light">Contact</a>
-      </div>
-    </nav>
+
+    <nav class="topnav">
+    <div class="topnav__left">
+    <span class="brand">GJ</span>
+    <span class="nav-separator"></span>
+    <a href="#instants">Galerie</a>
+    <a href="#services">Expériences</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <a href="#contact" class="topnav__btn">Réserver +</a>
+</nav>
+
 
     <div class="hero__content">
-      <h1>Un gîte authentique au cœur des montagnes</h1>
-      <p>Séjour, repas traditionnels et randonnées — une expérience simple, vraie et chaleureuse.</p>
-
-      <div class="cta">
-        <!-- Remplace le numéro -->
-        <a class="btn btn--primary" href="https://wa.me/213556922145" target="_blank" rel="noreferrer">WhatsApp</a>
-        <a class="btn btn--ghost" href="tel:+213556922145">Appeler</a>
-      </div>
-
-      <div class="badges">
-        <span>🌿 Nature</span>
-        <span>🥾 Randonnées</span>
-        <span>🍲 Cuisine locale</span>
-        <span>🛏️ Hébergement</span>
-      </div>
+      <h1>Gîte du Djurdjura</h1>
+      <p>Séjours authentiques, repas traditionnels et randonnées guidées — une expérience simple et chaleureuse.</p>
     </div>
   </header>
 
-  <main class="container">
-    <section class="section">
-      <h2>À propos</h2>
-      <p class="muted">
-        Un gîte familial pour se reposer, découvrir la région et vivre la montagne autrement :
-        accueil chaleureux, repas traditionnels, et sorties adaptées au niveau de chacun.
-      </p>
-    </section>
+<section class="section quickinfo" id="infos"  data-aos="fade-up">
+  <div class="container">
 
-    <section id="galerie" class="section">
-      <div class="section__head">
-        <h2>Galerie</h2>
-        <p class="muted">Quelques photos du gîte et des activités.</p>
-      </div>
+    <div class="quickinfo__head">
+      <h2>L’essentiel du gîte</h2>
+      <p class="muted">Quelques repères pour situer le lieu et l’expérience.</p>
+    </div>
 
-      <div class="grid">
-        <figure class="card"><img src="images/randonnee.jpg" alt="Randonnée en montagne"></figure>
-        <figure class="card"><img src="images/rondonnees.jpg" alt="Paysage de montagne"></figure>
-        <figure class="card"><img src="images/randonne-papa.jpg" alt="Randonnée neige"></figure>
-        <figure class="card"><img src="images/randonnee-3.jpg" alt="Randonnée en groupe"></figure>
-
-        <figure class="card"><img src="images/salon.jpg" alt="Salon traditionnel"></figure>
-        <figure class="card"><img src="images/salon-2.jpg" alt="Espace détente traditionnel"></figure>
-        <figure class="card"><img src="images/service.jpg" alt="Repas et service"></figure>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="section__head">
-        <h2>Services</h2>
-        <p class="muted">À ajuster selon ce que ton père propose exactement.</p>
-      </div>
-
-      <div class="features">
-        <div class="feature">
-          <h3>Hébergement</h3>
-          <p>Chambres / couchages dans une ambiance traditionnelle, propre et confortable.</p>
-        </div>
-        <div class="feature">
-          <h3>Repas traditionnels</h3>
-          <p>Cuisine locale (petit-déjeuner, déjeuner/dîner) — sur demande.</p>
-        </div>
-        <div class="feature">
-          <h3>Randonnées guidées</h3>
-          <p>Sorties montagne (débutant à confirmé), selon la saison et la météo.</p>
-        </div>
-        <div class="feature">
-          <h3>Expériences</h3>
-          <p>Découverte de la région, points de vue, moments conviviaux.</p>
+    <div class="quickinfo__grid">
+      <div class="qitem">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <div>
+          <strong>Localisation</strong>
+          <div class="qvalue">Tala Guilef, Boghni</div>
         </div>
       </div>
-    </section>
 
-    <section class="section info">
-      <div class="info__box">
-        <h2>Infos pratiques</h2>
-        <ul>
-          <li><strong>Capacité :</strong> à remplir</li>
-          <li><strong>Localisation :</strong> (Tala Guilef / Boghni)</li>
-          <li><strong>Saisons :</strong> toute l’année / selon météo</li>
-          <li><strong>Langues :</strong> Français, Anglais, Kabyle, et Arabe</li>
-        </ul>
-      </div>
-      <div class="info__box">
-        <h2>Réserver</h2>
-        <p class="muted">
-          Dis-nous les dates, le nombre de personnes et ce que vous voulez (séjour / repas / randonnée).
-        </p>
-        <div class="cta">
-          <a class="btn btn--primary" href="https://wa.me/213556922145" target="_blank" rel="noreferrer">Écrire sur WhatsApp</a>
-          <a class="btn btn--ghost" href="#contact">Voir contact</a>
+      <div class="qitem">
+        <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+        <div>
+          <strong>Capacité</strong>
+          <div class="qvalue">Jusqu’à X personnes</div>
         </div>
       </div>
-    </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="contact">
-        <div class="contact__card">
-          <h3>Coordonnées</h3>
-          <p><strong>Téléphone :</strong> <a href="tel:+213556922145">+213 556 92 21 45</a></p>
-          <p><strong>WhatsApp :</strong> <a href="https://wa.me/213556922145" target="_blank" rel="noreferrer">Envoyer un message</a></p>
-          <p><strong>Facebook :</strong> <a href="https://www.facebook.com/profile.php?id=61566464864168&locale=fr_CA" target="_blank" rel="noreferrer">Voir la page</a></p>
-        </div>
-
-        <div class="contact__card">
-          <h3>Carte</h3>
-          <p class="muted">Quand tu auras le lien Google Maps, on l’intègre ici (iframe).</p>
-          <!-- Exemple plus tard :
-          <iframe src="https://www.google.com/maps/embed?pb=..." loading="lazy"></iframe>
-          -->
+      <div class="qitem">
+        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+        <div>
+          <strong>Quand venir</strong>
+          <div class="qvalue">Toute l’année (selon météo)</div>
         </div>
       </div>
-    </section>
+
+      <div class="qitem">
+        <i class="fa-solid fa-person-hiking" aria-hidden="true"></i>
+        <div>
+          <strong>Randonnées</strong>
+          <div class="qvalue">Guidées • Tous niveaux</div>
+        </div>
+      </div>
+
+      <div class="qitem">
+        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+        <div>
+          <strong>Repas</strong>
+          <div class="qvalue">Cuisine maison sur demande</div>
+        </div>
+      </div>
+
+      <div class="qitem">
+        <i class="fa-solid fa-language" aria-hidden="true"></i>
+        <div>
+          <strong>Langues</strong>
+          <div class="qvalue">Francais • Kabyle • Arabe• Englais</div>
+        </div>
+      </div>
+    </div>
+
+  <div class="quickinfo__cta">
+  <a class="btn btn--gallery" href="#instants">
+    <i class="fa-regular fa-images"></i>
+    Découvrir la galerie
+  </a>
+</div>
+
+
+  </div>
+</section>
+
+
+  <main>
+
+
+
+    <!-- Expériences -->
+<section id="services" class="section experiences" data-aos="fade-up">
+  <div class="container">
+    <h2 class="experiences__title">L’expérience montagne, à votre rythme</h2>
+
+    <div class="experiences__grid">
+    <!-- 1 -->
+<article class="expCard">
+  <div class="expIcon"><i class="fa-solid fa-bed"></i></div>
+  <h3>Chambres chaleureuses</h3>
+  <p>Des espaces calmes en pierre et bois, pensés pour le repos et la simplicité.</p>
+</article>
+
+<!-- 2 -->
+<article class="expCard">
+  <div class="expIcon"><i class="fa-solid fa-bowl-food"></i></div>
+  <h3>Cuisine maison</h3>
+  <p>Recettes locales, produits de saison et repas partagés dans une ambiance familiale.</p>
+</article>
+
+<!-- 3 -->
+<article class="expCard">
+  <div class="expIcon"><i class="fa-solid fa-person-hiking"></i></div>
+  <h3>Randonnées guidées</h3>
+  <p>Parcours pour tous niveaux, vues panoramiques, nature et histoires du coin.</p>
+</article>
+
+<!-- 4 -->
+<article class="expCard">
+  <div class="expIcon"><i class="fa-solid fa-people-group"></i></div>
+  <h3>Accueil pour tous</h3>
+  <p>Couples, familles, solo et petits groupes — chacun trouve sa place ici.</p>
+</article>
+
+<!-- 5 -->
+<article class="expCard">
+  <div class="expIcon"><i class="fa-solid fa-masks-theater"></i></div>
+  <h3>Moments culturels</h3>
+  <p>Traditions, artisanat, musique et échanges — l’âme du village au quotidien.</p>
+</article>
+
+<!-- 6 -->
+<article class="expCard">
+  <div class="expIcon"><i class="fa-solid fa-leaf"></i></div>
+  <h3>Pause nature</h3>
+  <p>Déconnexion, silence, air pur — un séjour pour ralentir et respirer.</p>
+</article>
+
+    </div>
+
+<div class="experiences__cta">
+  <a class="btn btn--explore" href="#contact">
+    <i class="fa-solid fa-compass"></i>
+    Explorer l’expérience
+  </a>
+</div>
+
+  </div>
+</section>
+
+<!-- Galerie -->
+<!-- ===== STACKS (piles d’images + mini phrase) ===== -->
+<section class="section stacks" id="instants" data-aos="fade-up">
+  <div class="container">
+
+    <div class="stacks__head">
+      <h2>Des instants à vivre</h2>
+      <p class="muted">Trois ambiances, une même chaleur : nature, table et maison.</p>
+    </div>
+
+    <div class="stacks__grid">
+
+      <article class="stack">
+        <h3 class="stack__title">Randonnées & panoramas</h3>
+        <div class="image-stack">
+          <img class="layer-1" src="images/randonee.jpg" alt="">
+          <img class="layer-2" src="images/rondonnees.jpg" alt="">
+          <img class="layer-3" src="images/randonnee.jpg" alt="">
+        </div>
+      </article>
+
+      <article class="stack">
+        <h3 class="stack__title">Cuisine & feu de bois</h3>
+        <div class="image-stack">
+          <img class="layer-1" src="images/food.jpg" alt="">
+          <img class="layer-2" src="images/table.jpg" alt="">
+          <img class="layer-3" src="images/cheminee.jpg" alt="">
+        </div>
+      </article>
+
+      <article class="stack">
+        <h3 class="stack__title">Ambiance du gîte</h3>
+        <div class="image-stack">
+          <img class="layer-1" src="images/salon.jpg" alt="">
+          <img class="layer-2" src="images/salon-2.jpg" alt="">
+          <img class="layer-3" src="images/facade.jpg" alt="">
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="section contact2" data-aos="fade-up">
+      <div class="container">
+        <div class="contact2__grid">
+
+          <!-- Colonne gauche -->
+          <div class="contact2__left">
+            <h2 class="contact2__title">On se rejoint au cœur des montagnes</h2>
+            <p class="contact2__lead">
+              Envie de réserver un séjour, de découvrir nos repas traditionnels ou de préparer une randonnée ?
+              Écris-nous — on te répond rapidement et on t’aide à organiser une expérience simple, authentique et chaleureuse.
+            </p>
+
+            <div class="contact2__rows">
+              <a class="contact2__row" href="mailto:gitedudjurdjra@gmail.com">
+             <i class="fa-solid fa-envelope"></i>
+              <span><strong> </strong> gitedudjurdjra@gmail.com</span>
+              </a>
+
+              <a class="contact2__row" href="tel:+213556922145">
+                <i class="fa-solid fa-phone"></i>
+                <span><strong></strong> +213 556 92 21 45</span>
+              </a>
+
+              <a class="contact2__row" href="https://wa.me/213556922145" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span><strong> </strong> Écrire sur WhatsApp</span>
+              </a>
+
+              <a class="contact2__row" href="https://www.facebook.com/profile.php?id=61566464864168&sk=directory_basic_info&locale=fr_CA" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span><strong></strong> Suivez nos aventures et actualités</span>
+              </a>
+
+              <div class="contact2__row">
+                <i class="fa-solid fa-location-dot"></i>
+                <span><strong> </strong> Route de Tala Guilef, Boghni, Algérie 15003</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne droite -->
+          <!-- COLONNE DROITE : FORMULAIRE -->
+      <div class="contact2__right">
+       <form action="https://formsubmit.co/gitedudjurdjura@gmail.com" method="POST" class="contactForm">
+         <!-- Désactiver captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Format joli du mail -->
+  <input type="hidden" name="_template" value="table">
+
+  <!-- Redirection après envoi -->
+  <input type="hidden" name="_next" value="https://massyliamahdi.github.io/gitedjurdjura/success.html">
+
+     <div class="form-grid">
+     <div class="field">
+      <label for="name">Votre nom</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Votre email</label>
+      <input type="email" id="email" name="email" placeholder="votre.email@example.com" required>
+    </div>
+
+    <div class="field">
+      <label for="phone">Téléphone</label>
+      <input type="tel" id="phone" name="phone" placeholder="+213 555 55 55 55">
+    </div>
+
+     <div class="field">
+    <label for="arrival">Date d'arrivée</label>
+    <input type="text" id="arrival" name="arrival"  placeholder="Sélectionnez une date" readonly>
+  </div>
+
+  <div class="field">
+    <label for="departure">Date de départ</label>
+    <input type="text" id="departure" name="departure"  placeholder="Sélectionnez une date" readonly>
+  </div>
+
+  <div class="field full">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5"  placeholder="Écrivez votre message..." required></textarea>
+  </div>
+
+  <button type="submit" class="form-btn">Envoyer</button>
+</form>
+
+      </div>
+
+    </div>
+
+    <!-- CARTE EN DESSOUS DES DEUX COLONNES -->
+    <div class="contact2__map">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1400.2449926325753!2d3.9660334999814904!3d36.527924195790014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sfr!2sca!4v1767666415667!5m2!1sfr!2sca" 
+   width="600"
+   height="450" 
+   style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+   
+ </iframe>
+    </div>
+
+  </div>
+</section>
+
   </main>
 
-  <footer class="footer">
-    <p>© <span id="y"></span> Gîte — Tous droits réservés</p>
+  <footer class="footer footer--dark">
+    <div class="container footer__inner">
+      <p>© <span id="y"></span> Gîte du Djurdjura — Tous droits réservés</p>
+      <div class="footer__links">
+        <a href="#contact">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#instants">Galerie</a>
+      </div>
+    </div>
   </footer>
+<script>
+(function(){
+  // Pour chaque pile d'images, on fait "tourner" les 3 images au clic
+  document.querySelectorAll('.image-stack').forEach(stack => {
+    stack.addEventListener('click', () => {
+      const imgs = Array.from(stack.querySelectorAll('img'));
+      if (imgs.length < 2) return;
 
+      // On récupère src/alt de chaque image
+      const data = imgs.map(img => ({ src: img.src, alt: img.alt }));
+
+      // Rotation: la 1ère passe à la fin => la 2e devient 1ère, etc.
+      data.push(data.shift());
+
+      // On réapplique dans les images existantes
+      imgs.forEach((img, i) => {
+        img.src = data[i].src;
+        img.alt = data[i].alt;
+      });
+    });
+  });
+})();
+</script>
+
+  
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  const picker = new Litepicker({
+    element: document.getElementById('arrival'),
+    elementEnd: document.getElementById('departure'),
+    singleMode: false,        // permet la sélection d'un intervalle
+    numberOfMonths: 2,        // 2 calendriers côte à côte (optionnel)
+    numberOfColumns: 2,
+    autoApply: true,          // valide automatiquement les dates
+    selectForward: true,      // empêche de sélectionner une date fin avant la date début
+    tooltipText: {
+      one: 'jour',
+      other: 'jours'
+    },
+    tooltipNumber: (totalDays) => {
+      return totalDays - 1;
+    },
+  });
+</script>
+
+
+
 </body>
 </html>
+
