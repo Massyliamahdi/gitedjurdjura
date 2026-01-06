@@ -251,8 +251,7 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* Hover discret comme Webflow */
 .contact2__row:hover{
-  text-decoration: underline;
-  text-underline-offset: 6px;
+ color: var(--accent2);
 }
 
 /* Carte */
