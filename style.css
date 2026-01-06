@@ -352,6 +352,32 @@ h1,h2,h3{ margin:0 0 12px; }
   opacity: 1;     /* pour être bien visible */
   font-size: 15px;
 }
+/* Police uniforme pour tout le formulaire */
+/* Applique la police Inter à tout le formulaire */
+.contactForm,
+.contactForm label,
+.contactForm input,
+.contactForm textarea,
+.contactForm button {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Labels */
+.contactForm label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+
+/* Champs de saisie */
+.contactForm input,
+.contactForm textarea {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text);
+}
+
 
 
 /* Carte en dessous */
