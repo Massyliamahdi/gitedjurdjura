@@ -8,6 +8,9 @@
   <!-- Font Awesome (icônes) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" />
+  <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+
 
 
   <!-- Favicon -->
@@ -294,10 +297,14 @@
       <input type="tel" id="phone" name="phone">
     </div>
 
-    <div class="field">
-      <label for="dates">Dates souhaitées</label>
-      <input type="date" id="dates" name="dates">
-    </div>
+     <div class="field">
+    <label for="arrival">Date d'arrivée</label>
+    <input type="text" id="arrival" name="arrival" readonly>
+  </div>
+
+  <div class="field">
+    <label for="departure">Date de départ</label>
+    <input type="text" id="departure" name="departure" readonly>
   </div>
 
   <div class="field full">
@@ -364,6 +371,25 @@
 <script>
   AOS.init();
 </script>
+  <script>
+  const picker = new Litepicker({
+    element: document.getElementById('arrival'),
+    elementEnd: document.getElementById('departure'),
+    singleMode: false,        // permet la sélection d'un intervalle
+    numberOfMonths: 2,        // 2 calendriers côte à côte (optionnel)
+    numberOfColumns: 2,
+    autoApply: true,          // valide automatiquement les dates
+    selectForward: true,      // empêche de sélectionner une date fin avant la date début
+    tooltipText: {
+      one: 'jour',
+      other: 'jours'
+    },
+    tooltipNumber: (totalDays) => {
+      return totalDays - 1;
+    },
+  });
+</script>
+
 
 
 </body>
