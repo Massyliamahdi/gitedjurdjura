@@ -346,6 +346,12 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 
+/*placeholder*/
+::placeholder {
+  color: #b5a89b; /* beige doux du thème */
+  opacity: 1;     /* pour être bien visible */
+  font-size: 15px;
+}
 
 
 /* Carte en dessous */
