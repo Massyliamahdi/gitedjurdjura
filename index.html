@@ -276,29 +276,38 @@
           <!-- Colonne droite -->
           <!-- COLONNE DROITE : FORMULAIRE -->
       <div class="contact2__right">
-        <form action="https://formsubmit.co/gitedudjurdjra@gmail.com" method="POST" class="contact2__form">
+       <form action="https://formsubmit.co/gitedudjurdjra@gmail.com" method="POST" class="contactForm">
 
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="Nouveau message depuis le site Gîte du Djurdjura">
-          <input type="hidden" name="_template" value="table">
+  <div class="form-grid">
+    <div class="field">
+      <label for="name">Votre nom</label>
+      <input type="text" id="name" name="name" required>
+    </div>
 
-          <label for="name">Nom :</label>
-          <input type="text" id="name" name="name" required>
+    <div class="field">
+      <label for="email">Votre email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
 
-          <label for="email">Email :</label>
-          <input type="email" id="email" name="email" required>
+    <div class="field">
+      <label for="phone">Téléphone</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
 
-          <label for="dates">Dates du séjour :</label>
-          <input type="date" id="dates" name="dates">
+    <div class="field">
+      <label for="dates">Dates souhaitées</label>
+      <input type="date" id="dates" name="dates">
+    </div>
+  </div>
 
-          <label for="nights">Durée du séjour (nuits) :</label>
-          <input type="number" id="nights" name="nights" min="1" placeholder="Ex : 3 nuits">
+  <div class="field full">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+  </div>
 
-          <label for="message">Message :</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+  <button type="submit" class="form-btn">Envoyer</button>
+</form>
 
-          <button type="submit" class="btn btn--explore">Envoyer</button>
-        </form>
       </div>
 
     </div>
