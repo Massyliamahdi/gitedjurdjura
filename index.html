@@ -339,6 +339,16 @@
   });
 </script>
 
+  <script>
+document.querySelectorAll('.service__header').forEach(header => {
+  header.addEventListener('click', () => {
+    const service = header.parentElement;
+    service.classList.toggle('open');
+  });
+});
+</script>
+
+
 
 
 </body>
