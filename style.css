@@ -359,7 +359,7 @@ h1,h2,h3{ margin:0 0 12px; }
 .contactForm input,
 .contactForm textarea,
 .contactForm button {
-  font-family: 'Inter', sans-serif !important;
+  font-family:'Cabinet Grotesk Variable', Georgia, sans-serif; 
 }
 
 /* Labels */
@@ -430,7 +430,7 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 .services__title h2{
-  font-family: 'Playfair Display', serif;
+  font-family:'Cabinet Grotesk Variable', Georgia, sans-serif;
   font-size: 48px;
   font-weight: 500;
   margin: 0;
@@ -452,7 +452,7 @@ h1,h2,h3{ margin:0 0 12px; }
   background: none;
   border: none;
   color: inherit;
-  font-family: 'Inter', sans-serif;
+  font-family:'Cabinet Grotesk Variable', Georgia, sans-serif;
   font-size: 18px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -528,7 +528,7 @@ h1,h2,h3{ margin:0 0 12px; }
   margin-left: 12px;
 }
 .instant__title {
-  font-family: 'Playfair Display', serif;
+ font-family:'Cabinet Grotesk Variable', Georgia, sans-serif;
   font-size: 28px;
   font-weight: 500;
   margin-bottom: 12px;
@@ -632,7 +632,7 @@ h1,h2,h3{ margin:0 0 12px; }
 
 .topnav__left a {
   color: #234042; /* IMPORTANT POUR HERO SOMBRE */
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;;
+  font-family:'Cabinet Grotesk Variable', Georgia, sans-serif;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -648,7 +648,7 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* BRAND */
 .brand {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;;
+  font-family:'Cabinet Grotesk Variable', Georgia, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: .5px;
