@@ -530,6 +530,7 @@ h1,h2,h3{ margin:0 0 12px; }
 /* Texte */
 .instant__text {
   max-width: 500px;
+  margin-left: 12px;
 }
 .instant__title {
   font-family: 'Playfair Display', serif;
