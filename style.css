@@ -73,7 +73,7 @@ h1,h2,h3{ margin:0 0 12px; }
 /* ✅ Titre grand + très fin */
 .hero__content h1{
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Cabinet Grotesk Variable', Georgia, sans-serif;
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 0.98;
@@ -91,7 +91,7 @@ h1,h2,h3{ margin:0 0 12px; }
   line-height: 1.6;
   opacity: .92;
   color: #efe5d7;
-  font-family: sans-serif;
+  font-family: 'Cabinet Grotesk Variable', Georgia, sans-serif;
 }
 
 
