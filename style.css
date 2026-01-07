@@ -512,7 +512,7 @@ h1,h2,h3{ margin:0 0 12px; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 80px;
+  gap: 20.8px;
 }
 
 /* Inverser pile <-> texte */
