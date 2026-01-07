@@ -902,11 +902,18 @@ html {
   padding-left: 48px !important;
   padding-right: 48px !important;
 }
-.contact2--full .contact2__container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+.contact2__container{
+  width: 100%;
+  padding-left: 48px;
+  padding-right: 48px;
 }
+@media (max-width: 700px){
+  .contact2__container{
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
 
 
 
