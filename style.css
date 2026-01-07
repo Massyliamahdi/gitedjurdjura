@@ -775,12 +775,13 @@ html {
     padding: 10px 14px;      /* au lieu de 0 40px */
     height: auto;            /* laisse respirer */
     gap: 10px;
-    flex-wrap: wrap;         /* ✅ permet de passer à la ligne */
+    flex-wrap: nowrap;         /* ✅ permet de passer à la ligne */
     justify-content: space-between;/* centre proprement */
   }
 
   .topnav__left{
-    width: 100%;
+    display: flex;
+    width: auto;
     justify-content: center; /* centre GJ + liens */
     gap: 14px;
     flex-wrap: nowrap;         /* ✅ évite la coupure */
