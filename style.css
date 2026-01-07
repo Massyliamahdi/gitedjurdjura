@@ -509,6 +509,7 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* Bloc de chaque item */
 .instant {
+ display: grid;
  grid-template-columns: 546px 546px;
   column-gap: 80px;
   align-items: center;
