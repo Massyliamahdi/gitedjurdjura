@@ -21,7 +21,7 @@ h1,h2,h3{ margin:0 0 12px; }
 .hero {
   position: relative;
   min-height: 100vh;
-  background-image:url("images/randonne-papa.jpg");
+  background-image:url("images/montagne-routes-fn-webp.webp");
   background-size:cover;
   background-position:center;
   color:white;
@@ -504,54 +504,48 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 
-
-
-/* ===== Galerie chic uniforme ===== */
-/* ===== STACKS (piles d'images + mini phrase) ===== */
-.stacks{
-  padding: 64px 0;
-}
-
-
-/* ===== STACKS – 3 piles sur une ligne ===== */
-
-.stacks__head{
-  text-align:center;
-  margin-bottom: 36px;
-}
-
-.stacks__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 100px;
-  justify-items: center; /* centre chaque colonne */
-  justify-content: center; /* centre la grille */
-  margin: 0 auto;
-}
-.stack {
+/* === Nouveau layout instants alternés === */
+.instants__grid {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centre titre + image */
+  gap: 100px;
 }
 
+/* Bloc de chaque item */
+.instant {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
 
-.stack__title{
-  font-size: 15px;
-  text-align: left;
-  max-width: 360px;
-  width: 100%;
+/* Inverser pile <-> texte */
+.instant.reverse {
+  direction: rtl;
+}
+.instant.reverse > * {
+  direction: ltr;
+}
+
+/* Texte */
+.instant__text {
+  max-width: 500px;
+  margin-left: 12px;
+}
+.instant__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
   font-weight: 500;
-  letter-spacing: .02em;
-  color: var(--text);
+  margin-bottom: 12px;
 }
 
+/* Pile d’images superposées */
 .image-stack {
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 1 / 1;
   position: relative;
   cursor: pointer;
-  user-select: none;
-  
-  width: 450px;      /* largeur cohérente dans la grille */
-  height: 450px;     /* hauteur cohérente */
 }
 
 .image-stack img {
@@ -561,51 +555,48 @@ h1,h2,h3{ margin:0 0 12px; }
   object-fit: cover;
   border-radius: 22px;
   box-shadow: 0 18px 40px rgba(0,0,0,.12);
-  transition: transform .35s ease;
+  transition: opacity 0.35s ease;
+  transform: none !important;
+}
+/* Subtile superposition */
+.image-stack img:not(:last-child) {
+  top: 8px;
+  left: 8px;
+  opacity: 0.85;
+  filter: brightness(0.97);
+}
+.image-stack img:nth-child(1) {
+  top: 16px;
+  left: 16px;
+  opacity: 0.75;
+  filter: brightness(0.95);
 }
 
-/* Positionnement en éventail */
-.image-stack .layer-1{ transform: rotate(-7deg) translateX(-12px); z-index:1; }
-.image-stack .layer-2{ transform: rotate(0deg); z-index:2; }
-.image-stack .layer-3{ transform: rotate(7deg) translateX(12px); z-index:3; }
-
-/* Petit effet hover */
-.stack:hover .layer-1{ transform: rotate(-11deg) translateX(-20px); }
-.stack:hover .layer-3{ transform: rotate(11deg) translateX(20px); }
+/* Désactive éventail */
+.stack:hover .layer-1,
+.stack:hover .layer-3 {
+  transform: none !important;
+}
 
 /* Responsive */
-/* ===== STACKS MOBILE CENTER + NO OVERFLOW ===== */
-/* ===== STACKS : téléphone = vertical + centré ===== */
-@media (max-width: 600px){
-   .stacks .container{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  .stacks__grid{
-    grid-template-columns: 1fr;  /* ✅ 1 pile par ligne */
-    gap: 44px;                  /* espace entre piles */
-    justify-items: center;      /* ✅ centre chaque pile */
-    justify-content: center;  /* centre la colonne */
-  }
-
-  .stack{
-    display: grid;
-    width: 100%;
-    max-width: 360px;
+@media (max-width: 800px) {
+  .instant {
+    grid-template-columns: 1fr;
     text-align: center;
-    justify-items: center;
   }
 
-  .image-stack{
-    max-width: 320px;           /* adapte à l'écran */
-    width: 100%;      
+  .instant.reverse {
+    direction: ltr;
+  }
+
+  .instant__text {
+    max-width: 100%;
+  }
+
+  .image-stack {
     margin: 0 auto;
-    
+    max-width: 340px;
   }
-
-  /* Réduit le débordement visuel */
-  .image-stack .layer-1{ transform: rotate(-5deg) translateX(-6px); }
-  .image-stack .layer-3{ transform: rotate(5deg) translateX(6px); }
 }
 
 
@@ -904,6 +895,25 @@ html {
     scroll-padding-top: 160px;
   }
 }
+
+.contact2--full .container {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+}
+.contact2__container{
+  width: 100%;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+@media (max-width: 700px){
+  .contact2__container{
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
 
 
 
