@@ -512,7 +512,7 @@ h1,h2,h3{ margin:0 0 12px; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
 }
 
 /* Inverser pile <-> texte */
@@ -525,9 +525,11 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* Texte */
 .instant__text {
+  align-items: flex-start;
   max-width: 480px;
   margin-left: 12px;
   font-size: 1.1rem;
+  gap: 20.8px;
 }
 .instant__title {
  font-family:'Cabinet Grotesk Variable', Georgia, sans-serif;
