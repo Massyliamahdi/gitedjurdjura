@@ -519,11 +519,24 @@ h1,h2,h3{ margin:0 0 12px; }
 
 /* Inverser pile <-> texte */
 .instant.reverse {
-  direction: rtl;
-}
-.instant.reverse > * {
   direction: ltr;
 }
+
+.instant.reverse {
+  grid-template-columns: 546px 546px;
+}
+
+.instant.reverse {
+  grid-auto-flow: dense;
+}
+
+.instant.reverse .instant__text {
+  order: 2;
+}
+.instant.reverse .image-stack {
+  order: 1;
+}
+
 
 /* Texte */
 .instant__text {
