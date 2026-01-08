@@ -691,8 +691,8 @@ h1,h2,h3{ margin:0 0 12px; }
   color: #234042; /* IMPORTANT POUR HERO SOMBRE */
   font-family:'Cabinet Grotesk Variable', Georgia, sans-serif;
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 600;
   letter-spacing: 0.02em;
   opacity: 0.92;
 }
@@ -706,8 +706,8 @@ h1,h2,h3{ margin:0 0 12px; }
 /* BRAND */
 .brand {
   font-family:'Cabinet Grotesk Variable', Georgia, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 600;
   letter-spacing: .5px;
   color: #234042;
 }
@@ -727,8 +727,8 @@ h1,h2,h3{ margin:0 0 12px; }
   color: #efe5d7;
   padding: 10px 22px;
   border-radius: 10px;
-  font-size: 1.5rm;
-  font-weight: 700;
+  font-size: 1.2rm;
+  font-weight: 600;
   text-decoration: none;
   transition: .25s ease;
 }
