@@ -469,8 +469,10 @@ h1,h2,h3{ margin:0 0 12px; }
 }
 
 .service .plus{
-  font-size: 26px;
-  transition: transform 0.3s ease;
+  font-size: 1.7rem;
+  font-weight: 300;
+  opacity: 0.85;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .service__content{
@@ -491,6 +493,7 @@ h1,h2,h3{ margin:0 0 12px; }
 
 .service.open .plus{
   transform: rotate(45deg);
+  opacity: 1;
 }
 
 /* Responsive */
